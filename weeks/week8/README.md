@@ -1,13 +1,23 @@
-# Week 8 — Final project + presentation
+# Week 8 — Project finish + final report + presentation
 
-Finish the project picked in Week 4. Deliver:
+Polish, document, present.
 
-- Final report (4–6 pages): specs, design choices, hand calcs, LTspice schematics, sim results, what didn't work first time and how it was fixed.
-- 15-minute presentation / demo walkthrough.
+## Polish
+- Tune component values to hit specs.
+- Stress-test: sweep R/C, change op-amp GBW, change initial conditions — does the circuit still behave?
+- Identify and explain at least one failure mode.
 
-## Project options (chosen in Week 4)
+## Final report (4–6 pages)
+- Specs you chose and why
+- Block diagram + LTspice schematic
+- Hand calculations for the key parameters
+- Simulation results vs predictions
+- What didn't work the first time, and how you fixed it
 
-1. **Audio preamp + Baxandall tone control** — BJT CE input → op-amp Baxandall → op-amp output buffer.
-2. **Function generator** — op-amp relaxation oscillator → integrator → diode sine shaper.
-3. **Two-stage discrete amplifier with measured specs** — A_v ≥ 50, Z_in ≥ 10 kΩ, Z_out ≤ 100 Ω, BW ≥ 50 kHz, THD < 1% at 1 V_pp.
-4. **Thermistor / strain-gauge front-end** — Wheatstone bridge → instrumentation amp → Sallen-Key anti-alias filter.
+## Presentation (~15 min)
+- Walk through the design top-down: equation/spec → block diagram → component-level circuit.
+- Live LTspice demo: run the sim, show the waveforms.
+- Reflect: what would you build *next* if you had another month?
+
+## Deliverable
+Report PDF + final LTspice files in `weeks/week8/labs/`, committed to the repo.

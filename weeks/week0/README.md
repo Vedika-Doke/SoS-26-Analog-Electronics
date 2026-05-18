@@ -28,3 +28,29 @@ Common parts (LM324, uA741, BC547, 1N914, Zener, LEDs, MOSFETs) are already pack
 - [ ] Know how to add a new component/model
 
 Reach out if you hit any installation or setup issue. Happy simulating ⚡
+
+---
+
+## What's coming — the 8-week journey
+
+The course is **op-amp heavy**. We touch diodes, BJTs and MOSFETs lightly in Week 2 just so you recognize them in a schematic — the real work starts at Week 3 and stays in op-amp land.
+
+| Week | Topic | You'll build |
+|------|-------|--------------|
+| 1 | Linear networks + LTspice fluency | RC step response, τ from waveform |
+| 2 | Diodes + BJT/MOS (light touch) | Bridge rectifier + your own clipper |
+| 3 | Op-amps I — ideal linear | Integrator turning square waves into triangles |
+| 4 | Op-amps II — real limits *(midterm window)* | Slew-rate measurement |
+| 5 | Op-amps III — non-linear: Schmitt, comparators, oscillators | Relaxation oscillator at target frequency |
+| 6 | Active filters + instrumentation amp | Inst. amp with CMRR ≥ 60 dB |
+| 7 | Final project — design + first build | Choice locked, half built |
+| 8 | Final project — polish + report + demo | Working circuit + presentation |
+
+**Final project — pick one in Week 7:**
+1. **Analog differential-equation solver** — integrators + summers wired up to physically solve an ODE (e.g. a damped mass-spring oscillator). Voltage at each node *is* a variable.
+2. **555 timer from scratch** — recreate the legendary NE555 internals using discrete op-amps, comparators and a latch. Configure as astable oscillator or monostable one-shot.
+3. **Lotka-Volterra solver 🌶️** *(stretch challenge)* — predator-prey ODEs. Same idea as Option 1 but the `xy` terms are non-linear, so you'll learn to use an **analog multiplier** (AD633). The reward: an X-Y plot showing the famous predator-prey limit cycle.
+
+**Midterm submission** likely happens around the Week 4 / Week 5 boundary — keep your weekly deliverables organized so you can compile a summary easily.
+
+Each week: ~6–8 hours of effort, one 45-min meet, one deliverable (hand calc + LTspice schematic + sim plots).

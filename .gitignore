@@ -23,3 +23,6 @@ EE204 (Analog Circuits)/
 .vscode/
 .idea/
 *.swp
+
+# Local-only project reference (kept on Drive)
+LotkaVol/

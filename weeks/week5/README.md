@@ -1,15 +1,25 @@
-# Week 5 — MOSFETs + frequency response
+# Week 5 — Op-amps III: Non-linear circuits (Schmitt, comparators, oscillators)
 
-**Concepts:** MOSFET square-law model, biasing, CS amplifier (quick compare vs CE), Bode plots in detail, dominant pole, GBW, Miller effect (intuition).
+So far we've used op-amps with negative feedback. This week flips the script: **positive feedback**, **open-loop comparators**, and **regenerative switching**. These building blocks power the 555 timer and a huge chunk of analog signal-conditioning.
+
+## Concepts
+- **Comparator** — open-loop op-amp as a 1-bit decision maker. Why you should use a dedicated comparator IC (LM311) instead of a slow op-amp in practice.
+- **Schmitt trigger** — comparator + positive feedback → hysteresis (two distinct thresholds, V_TH and V_TL). Kills chatter on noisy edges.
+  - Inverting and non-inverting variants.
+  - How to calculate the thresholds from the resistor divider.
+- **Relaxation oscillator** — Schmitt trigger + RC charging loop → square wave with frequency set by RC and the hysteresis window. This is *exactly* how the 555 timer works internally.
+- **Precision rectifier** preview (op-amp + diode) — overcoming the 0.7 V diode drop.
 
 ## Reading & slides
-- S&S Ch. 5 — MOSFET + CS amplifier; revisit Bode intuition from Ch. 1
-- Slides: `mc_bode_1`, `missedclass/mc_bode_1.pdf`
-- HW: `MOS.pdf`, `3_bode+rectifier.pdf` (Bode portion)
+- **Sergio Franco** — chapter on comparators / non-linear circuits. [Drive folder](https://drive.google.com/drive/folders/17T1Mnk_SVdqIi2b4Fn-qmpbAn6tkMbvd?usp=drive_link)
+- **Prof. M. B. Patil's EE204 slides:** `mc_opamp_6`. [Drive mirror](https://drive.google.com/drive/folders/1jPG5-WahBaDfoCOUDKTlCq3mqKhl5vyN?usp=drive_link) · [Source](https://www.ee.iitb.ac.in/~sequel/course_material.html)
+- Reference: TI LM555 datasheet (the 555 has a Schmitt + comparator structure we'll meet in the project). https://www.ti.com/lit/ds/symlink/lm555.pdf
 
 ## LTspice lab
-1. CS amplifier mirror of Week-4 CE design; compare gain, Z_in, distortion.
-2. CE amplifier frequency response: `.ac dec 50 1 1G`. Identify LF pole (coupling cap), HF roll-off.
+1. **Open-loop comparator** — `UniversalOpAmp2` with no feedback; threshold = 0 V. Drive with a sine, observe square output.
+2. **Inverting Schmitt trigger** — design for V_TH = +2 V, V_TL = −2 V with V_sat = ±10 V. Verify with a slow noisy sine; show output doesn't chatter on the zero-crossing.
+3. **Relaxation oscillator** — Schmitt trigger + RC feedback. Design for f ≈ 1 kHz. Measure period, compare with hand calc.
+4. **Bonus: precision half-wave rectifier** — works on signals smaller than 0.7 V.
 
 ## Deliverable
-Annotated Bode plot of Week-4 CE amp with poles labeled + cause of each explained.
+Relaxation oscillator with measured frequency within 10% of design. Show: schematic, V_cap (triangle-ish ramp) and V_out (square) on the same plot, hand calc of period.

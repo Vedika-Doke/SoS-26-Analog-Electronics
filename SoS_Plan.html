@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SoS Analog Electronics — 8-Week Plan</title>
+<title>SoS '26 — Analog Electronics · 8-Week Plan</title>
 <style>
   :root {
     --bg: #fafaf7;
@@ -24,360 +24,264 @@
     margin: 0 auto;
     padding: 48px 32px 80px;
   }
-  h1 {
-    font-size: 2.2rem;
-    margin: 0 0 8px;
-    letter-spacing: -0.5px;
-  }
-  h2 {
-    font-size: 1.5rem;
-    margin-top: 56px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--accent);
-    letter-spacing: -0.3px;
-  }
-  h3 {
-    font-size: 1.15rem;
-    margin-top: 28px;
-    color: var(--accent);
-  }
-  .subtitle {
-    color: var(--muted);
-    font-size: 1.05rem;
-    margin-bottom: 32px;
-  }
-  .meta {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--accent);
-    padding: 16px 20px;
-    border-radius: 6px;
-    margin: 24px 0;
-    font-size: 0.95rem;
-  }
+  h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.5px; }
+  h2 { font-size: 1.5rem; margin-top: 56px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); letter-spacing: -0.3px; }
+  h3 { font-size: 1.15rem; margin-top: 28px; color: var(--accent); }
+  .subtitle { color: var(--muted); font-size: 1.05rem; margin-bottom: 32px; }
+  .meta { background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 16px 20px; border-radius: 6px; margin: 24px 0; font-size: 0.95rem; }
   .meta strong { color: var(--accent); }
-  .week {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 24px 28px;
-    margin: 24px 0;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  }
-  .week h2 {
-    margin-top: 0;
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  .week .tag {
-    display: inline-block;
-    background: var(--accent-soft);
-    color: var(--accent);
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 3px 10px;
-    border-radius: 12px;
-    margin-bottom: 8px;
-  }
-  .row {
-    display: grid;
-    grid-template-columns: 130px 1fr;
-    gap: 8px 16px;
-    margin: 14px 0;
-    font-size: 0.96rem;
-  }
-  .row .label {
-    color: var(--muted);
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.78rem;
-    letter-spacing: 0.5px;
-    padding-top: 3px;
-  }
-  code, .file {
-    font-family: "SF Mono", "JetBrains Mono", Menlo, monospace;
-    background: var(--code-bg);
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-size: 0.88em;
-  }
+  .week { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; margin: 24px 0; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+  .week h2 { margin-top: 0; border-bottom: none; padding-bottom: 0; }
+  .week .tag { display: inline-block; background: var(--accent-soft); color: var(--accent); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 10px; border-radius: 12px; margin-bottom: 8px; }
+  .week .tag.warn { background: #fbe4c5; color: #8a4a14; }
+  .row { display: grid; grid-template-columns: 130px 1fr; gap: 8px 16px; margin: 14px 0; font-size: 0.96rem; }
+  .row .label { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.5px; padding-top: 3px; }
+  code, .file { font-family: "SF Mono", "JetBrains Mono", Menlo, monospace; background: var(--code-bg); padding: 2px 6px; border-radius: 3px; font-size: 0.88em; }
   ul, ol { padding-left: 22px; }
   li { margin: 4px 0; }
-  .deliverable {
-    background: var(--accent-soft);
-    border-radius: 6px;
-    padding: 10px 16px;
-    margin-top: 14px;
-    font-size: 0.95rem;
-  }
+  .deliverable { background: var(--accent-soft); border-radius: 6px; padding: 10px 16px; margin-top: 14px; font-size: 0.95rem; }
   .deliverable strong { color: var(--accent); }
-  .project-list {
-    counter-reset: proj;
-    list-style: none;
-    padding: 0;
-  }
-  .project-list li {
-    counter-increment: proj;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 16px 20px 16px 56px;
-    margin: 12px 0;
-    position: relative;
-  }
-  .project-list li::before {
-    content: counter(proj);
-    position: absolute;
-    left: 16px;
-    top: 16px;
-    width: 28px;
-    height: 28px;
-    line-height: 28px;
-    text-align: center;
-    background: var(--accent);
-    color: white;
-    border-radius: 50%;
-    font-weight: 700;
-    font-size: 0.9rem;
-  }
-  .recommend {
-    background: var(--accent-soft);
-    border-left: 4px solid var(--accent);
-    padding: 12px 18px;
-    border-radius: 4px;
-    margin: 18px 0;
-  }
-  .ltspice-section {
-    background: #2d2d33;
-    color: #e4e4e7;
-    border-radius: 8px;
-    padding: 24px 28px;
-    margin: 24px 0;
-  }
-  .ltspice-section h2 {
-    color: #f5b78e;
-    border-bottom-color: #f5b78e;
-    margin-top: 0;
-  }
-  .ltspice-section code {
-    background: #1d1d20;
-    color: #f5b78e;
-  }
-  .ltspice-section a { color: #f5b78e; }
-  .tips {
-    background: var(--card);
-    border: 1px dashed var(--border);
-    border-radius: 6px;
-    padding: 18px 24px;
-    margin-top: 32px;
-  }
-  hr {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 48px 0;
-  }
+  .project-list { counter-reset: proj; list-style: none; padding: 0; }
+  .project-list li { counter-increment: proj; background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 16px 20px 16px 56px; margin: 12px 0; position: relative; }
+  .project-list li::before { content: counter(proj); position: absolute; left: 16px; top: 16px; width: 28px; height: 28px; line-height: 28px; text-align: center; background: var(--accent); color: white; border-radius: 50%; font-weight: 700; font-size: 0.9rem; }
+  .midterm { background: #fbe4c5; border-left: 4px solid #d27620; padding: 14px 20px; border-radius: 6px; margin: 20px 0; }
+  .midterm strong { color: #8a4a14; }
+  .ltspice-section { background: #2d2d33; color: #e4e4e7; border-radius: 8px; padding: 24px 28px; margin: 24px 0; }
+  .ltspice-section h2 { color: #f5b78e; border-bottom-color: #f5b78e; margin-top: 0; }
+  .ltspice-section code { background: #1d1d20; color: #f5b78e; }
+  .tips { background: var(--card); border: 1px dashed var(--border); border-radius: 6px; padding: 18px 24px; margin-top: 32px; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 0.94rem; }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { background: var(--accent-soft); color: var(--accent); }
 </style>
 </head>
 <body>
 
-<h1>Summer of Science — Analog Electronics</h1>
-<p class="subtitle">8-week mentoring plan · Diodes → BJT → MOS → Op-amps → LTspice project</p>
+<h1>SoS '26 — Analog Electronics</h1>
+<p class="subtitle">8-week mentoring plan · op-amp focused · ends with a project of the mentee's choice (analog DE solver or 555 timer from scratch)</p>
 
 <div class="meta">
-  <strong>Mentor:</strong> Vedika &nbsp;·&nbsp;
+  <strong>Mentor:</strong> Vedika Doke &nbsp;·&nbsp;
   <strong>Duration:</strong> 8 weeks (~6–8 hrs/week mentee effort) &nbsp;·&nbsp;
-  <strong>Goal:</strong> Build intuition for diodes, BJTs, MOSFETs and op-amps; finish with a non-trivial LTspice project that exercises both discrete and op-amp design.
+  <strong>Cadence:</strong> One 45-min meet per week; content released week by week.
 </div>
 
-<h3>Resource shorthand</h3>
+<h2>At a glance</h2>
+<table>
+  <thead><tr><th>Week</th><th>Topic</th><th>Key deliverable</th></tr></thead>
+  <tbody>
+    <tr><td>0</td><td>LTspice setup</td><td>Tool installed, simple sim run</td></tr>
+    <tr><td>1</td><td>Linear networks + LTspice fluency</td><td>RC step response, τ measured</td></tr>
+    <tr><td>2</td><td>Diodes + BJT/MOS (light touch)</td><td>Bridge rectifier + custom clipper</td></tr>
+    <tr><td>3</td><td>Op-amps I — ideal linear</td><td>Integrator producing triangle wave</td></tr>
+    <tr><td>4</td><td>Op-amps II — real limits <em>(midterm window)</em></td><td>Slew-rate measurement</td></tr>
+    <tr><td>5</td><td>Op-amps III — Schmitt, comparators, oscillators</td><td>Relaxation oscillator at target frequency</td></tr>
+    <tr><td>6</td><td>Active filters + instrumentation amp</td><td>Inst. amp with CMRR ≥ 60 dB</td></tr>
+    <tr><td>7</td><td>Final project — design + first build</td><td>Choice locked, half built</td></tr>
+    <tr><td>8</td><td>Final project — polish + report + demo</td><td>Working circuit + presentation</td></tr>
+  </tbody>
+</table>
+
+<h3>Resource credits</h3>
 <ul>
-  <li><strong>S&amp;S</strong> → <span class="file">EE204 (Analog Circuits)/Book/SedraSmith</span></li>
-  <li><strong>Franco</strong> → <span class="file">EE204 (Analog Circuits)/Book/SergioFranco_DesignwithOpAmp</span></li>
-  <li><strong>Slides</strong> → <span class="file">EE204 (Analog Circuits)/mc_all_slides (1)/</span></li>
-  <li><strong>HW</strong> → <span class="file">EE204 (Analog Circuits)/HW/</span></li>
+  <li><strong>Sedra &amp; Smith</strong>, <em>Microelectronic Circuits</em> — <a href="https://drive.google.com/drive/folders/1AWumX1rr4MDby0pJfxpg7-JE0xuE8mdn?usp=drive_link">Drive folder</a></li>
+  <li><strong>Sergio Franco</strong>, <em>Design with Op-Amps and Analog ICs</em> — <a href="https://drive.google.com/drive/folders/17T1Mnk_SVdqIi2b4Fn-qmpbAn6tkMbvd?usp=drive_link">Drive folder</a></li>
+  <li><strong>Prof. M. B. Patil's EE204 slides</strong> (IIT Bombay) — <a href="https://www.ee.iitb.ac.in/~sequel/course_material.html">course page</a> · <a href="https://drive.google.com/drive/folders/1jPG5-WahBaDfoCOUDKTlCq3mqKhl5vyN?usp=drive_link">Drive mirror</a></li>
+  <li><strong>Lotka-Volterra project brief</strong> — courtesy of EESA's <em>opAmped</em>, Learner's Space, IIT Bombay (Summer 2025). <a href="https://drive.google.com/drive/folders/1Eb89DbthMYpdsaxMRP_hKD4yDCrUxa3Q?usp=drive_link">Drive folder</a></li>
+  <li><strong>LTspice install + tutorial videos</strong> — Drive links inside <span class="file">weeks/week0/</span></li>
 </ul>
 
-<p>Each week has: <em>Concepts → Reading → Slides → LTspice lab → Deliverable.</em><br>
-Weekly deliverable: one PDF with hand calculations + LTspice schematic + simulation plots + 1-paragraph reflection (<em>what surprised me / what broke</em>).</p>
+<p>Each week: <em>Concepts → Reading → Slides → LTspice lab → Deliverable.</em><br>
+Weekly deliverable: hand calculations + LTspice schematic + simulation plots + 1-paragraph reflection.</p>
 
 <hr>
 
 <div class="week">
   <span class="tag">Week 0 · Optional</span>
-  <h2>Setup</h2>
+  <h2>LTspice setup</h2>
   <ul>
-    <li>Install LTspice (Mac/Windows). Test with a simple voltage divider.</li>
-    <li>Walkthrough: schematic capture, <code>.tran</code>, <code>.ac</code>, <code>.dc</code>, <code>.op</code>, probing currents vs voltages, <code>.measure</code>, parameter sweeps with <code>.step param</code>.</li>
-    <li><strong>Drop a short LTspice cheat-sheet PDF into</strong> <span class="file">LTSpice_Guide/</span> (currently empty). Cover: placing components, sources (V, I, PULSE, SINE, PWL), running each analysis type, reading waveforms, adding SPICE models from manufacturer <code>.lib</code> files.</li>
+    <li>Install LTspice XVII (or latest) — Analog Devices, free, Mac/Windows.</li>
+    <li>Watch the install + tutorial videos (Drive links in <span class="file">weeks/week0/</span>).</li>
+    <li>Build one simple circuit (resistor + source) and run a simulation.</li>
+    <li>Know how to add an external SPICE model (we've pre-packaged common ones in <span class="file">ltspice/models/</span>).</li>
   </ul>
 </div>
 
 <div class="week">
   <span class="tag">Week 1</span>
-  <h2>Linear network refresher + LTspice fluency</h2>
-  <p><strong>Concepts:</strong> KVL/KCL, Thevenin/Norton, superposition, RC transient &amp; frequency response, phasors.<br>
-  <em>Why first:</em> Everything later reduces to these. If shaky, op-amps will feel like magic.</p>
-  <div class="row"><span class="label">Slides</span><span><span class="file">mc_thev_1.pdf</span>, <span class="file">mc_superposition_1.pdf</span>, <span class="file">mc_rc_1.pdf</span>, <span class="file">mc_phasors.pdf</span></span></div>
-  <div class="row"><span class="label">Reading</span><span>S&amp;S Ch. 1 (signals + amplifier model — gain, Z<sub>in</sub>, Z<sub>out</sub>)</span></div>
-  <div class="row"><span class="label">HW</span><span><span class="file">HW/1_basic.pdf</span> (+ <span class="file">1_sol.pdf</span> for self-check)</span></div>
+  <h2>Linear networks + LTspice fluency</h2>
+  <p><strong>Concepts:</strong> KVL/KCL, Thevenin/Norton, superposition, RC transient response (charging/discharging, τ = RC), capacitor and inductor I-V relationships.</p>
+  <div class="row"><span class="label">Slides</span><span><span class="file">mc_thev_1</span>, <span class="file">mc_superposition_1</span>, <span class="file">mc_rc_1</span></span></div>
+  <div class="row"><span class="label">Reading</span><span>S&amp;S Ch. 1 — signals + amplifier model (gain, Z<sub>in</sub>, Z<sub>out</sub>)</span></div>
+  <div class="row"><span class="label">HW</span><span><span class="file">1_basic.pdf</span> (+ <span class="file">1_sol.pdf</span>)</span></div>
   <div class="row"><span class="label">LTspice lab</span><span>
     <ol>
-      <li>RC low-pass: <code>.tran</code> step response + <code>.ac dec 100 1 1MEG</code>; verify f<sub>c</sub> = 1/(2πRC) from Bode plot.</li>
-      <li>Thevenin equivalent: build a 3-resistor + source network, find V<sub>th</sub> and R<sub>th</sub> by simulation (open-circuit V, short-circuit I).</li>
+      <li>RC charging: <code>.tran</code>, measure τ at 63 % point.</li>
+      <li>RC discharging: verify same τ.</li>
+      <li>Thevenin equivalent: 3-resistor network, find V<sub>th</sub> and R<sub>th</sub> by simulation.</li>
     </ol>
   </span></div>
-  <div class="deliverable"><strong>Deliverable:</strong> Bode plot of RC with cursor markers at f<sub>c</sub>, hand calc matching within 5%.</div>
+  <div class="deliverable"><strong>Deliverable:</strong> Step-response plot with τ marked, hand calc matching within 5 %.</div>
 </div>
 
 <div class="week">
   <span class="tag">Week 2</span>
-  <h2>Diodes, rectifiers, wave-shaping</h2>
-  <p><strong>Concepts:</strong> PN junction, exponential I-V, constant-voltage-drop model, small-signal r<sub>d</sub>, Zener regulation, half/full-wave rectifier, peak detector, clipper, clamper.</p>
-  <div class="row"><span class="label">Slides</span><span><span class="file">mc_diodes_1.pdf</span>, <span class="file">mc_diodes_2.pdf</span></span></div>
-  <div class="row"><span class="label">Reading</span><span>S&amp;S Ch. 4 — diode models, rectifiers, limiting/clamping</span></div>
-  <div class="row"><span class="label">HW</span><span><span class="file">HW/3_bode+rectifier.pdf</span> (rectifier portion)</span></div>
+  <h2>Diodes + BJT/MOS (light touch)</h2>
+  <p>Exposure, not mastery. Recognize the devices in a schematic, know what they do, then move on.</p>
+  <p><strong>Concepts:</strong> diode I-V + rectification + Zener; BJT regions (cutoff/active/sat) qualitatively; MOSFET as a voltage-controlled switch.</p>
+  <div class="row"><span class="label">Slides</span><span><span class="file">mc_diodes_1</span>, <span class="file">mc_diodes_2</span>, <span class="file">mc_bjt_1</span></span></div>
+  <div class="row"><span class="label">Reading</span><span>S&amp;S Ch. 4 (diodes); Ch. 6 §6.1–6.2 (BJT operation) — skim only</span></div>
   <div class="row"><span class="label">LTspice lab</span><span>
     <ol>
-      <li>Full-wave bridge rectifier with smoothing cap → measure ripple vs C, vs load R. Sweep C with <code>.step param C 10u 1000u 10</code>.</li>
-      <li>Zener shunt regulator: plot V<sub>out</sub> vs V<sub>in</sub> (<code>.dc</code>) and vs I<sub>load</sub>.</li>
-      <li>Bonus: precision rectifier preview (op-amp + diode) — set up but don't analyse deeply; we'll return in Week 6.</li>
+      <li>Full-wave bridge rectifier — ripple vs C, sweep with <code>.step param</code>.</li>
+      <li>Zener shunt regulator — <code>.dc</code> sweep.</li>
+      <li>BJT as a switch — driving an LED.</li>
     </ol>
   </span></div>
-  <div class="deliverable"><strong>Deliverable:</strong> Ripple-vs-C plot + a clipper of their own design that limits a ±5 V sine to ±2 V.</div>
+  <div class="deliverable"><strong>Deliverable:</strong> Ripple-vs-C plot + a clipper that limits a ±5 V sine to ±2 V.</div>
 </div>
 
 <div class="week">
   <span class="tag">Week 3</span>
-  <h2>BJT — physics-lite, DC bias, load lines</h2>
-  <p><strong>Concepts:</strong> NPN/PNP operation, regions (cutoff/active/saturation), β, Ebers-Moll → simplified active-region model, voltage-divider bias, load line, Q-point sensitivity.</p>
-  <div class="row"><span class="label">Slides</span><span><span class="file">mc_bjt_1.pdf</span>, <span class="file">missedclass/ee204_bjt_1.pdf</span></span></div>
-  <div class="row"><span class="label">Reading</span><span>S&amp;S Ch. 6 — operation + DC analysis</span></div>
-  <div class="row"><span class="label">HW</span><span><span class="file">HW/BJT.pdf</span> (+ <span class="file">BJT_ans.pdf</span>)</span></div>
-  <div class="row"><span class="label">LTspice lab</span><span>
+  <h2>Op-amps I — Ideal linear circuits</h2>
+  <p>The big one. Golden rules → almost every linear op-amp circuit becomes one-line algebra.</p>
+  <p><strong>Concepts:</strong> virtual short; inverting / non-inverting / buffer; summer; difference; <strong>integrator</strong>; differentiator.</p>
+  <div class="row"><span class="label">Slides</span><span><span class="file">mc_opamp_1</span> → <span class="file">mc_opamp_3</span></span></div>
+  <div class="row"><span class="label">Reading</span><span>Franco Ch. 1–2; S&amp;S Ch. 2 cross-ref</span></div>
+  <div class="row"><span class="label">HW</span><span><span class="file">2_instrumentation.pdf</span> (easier problems)</span></div>
+  <div class="row"><span class="label">LTspice lab</span><span>Use <code>UniversalOpAmp2</code>.
     <ol>
-      <li>Plot I<sub>C</sub> vs V<sub>CE</sub> for stepped I<sub>B</sub> using <code>.dc V1 0 10 0.05</code> with <code>.step</code> on I<sub>B</sub>. Builds family-of-curves intuition.</li>
-      <li>Voltage-divider biased CE stage: find Q-point with <code>.op</code>; sweep β by 2× via model card, observe Q-point shift — motivates <em>why</em> voltage-divider bias.</li>
+      <li>Inverting amp, gain −10.</li>
+      <li>Non-inverting amp, gain +5.</li>
+      <li>Voltage follower under load.</li>
+      <li>Summing amp — two DC inputs.</li>
+      <li>Integrator — square in → triangle out. Large feedback R prevents DC drift.</li>
     </ol>
   </span></div>
-  <div class="deliverable"><strong>Deliverable:</strong> Annotated output-characteristics plot + table showing Q-point stability across β.</div>
+  <div class="deliverable"><strong>Deliverable:</strong> Integrator producing a clean triangle from a square. Schematic + plot + hand calc.</div>
 </div>
 
 <div class="week">
-  <span class="tag">Week 4 · Pick the project</span>
-  <h2>BJT amplifiers (small-signal)</h2>
-  <p><strong>Concepts:</strong> Small-signal model (pick <strong>hybrid-π</strong>, stick with it), CE / CC (emitter follower) / CB topologies, gain / Z<sub>in</sub> / Z<sub>out</sub>, coupling and bypass caps.</p>
-  <div class="row"><span class="label">Slides</span><span><span class="file">mc_bjt_2.pdf</span>, <span class="file">mc_bjt_3.pdf</span></span></div>
-  <div class="row"><span class="label">Reading</span><span>S&amp;S Ch. 6 — small-signal + single-stage amplifiers</span></div>
-  <div class="row"><span class="label">HW</span><span><span class="file">HW/BJT_crazy.pdf</span> (+ <span class="file">bjt_crazy_ans.pdf</span>)</span></div>
-  <div class="row"><span class="label">LTspice lab</span><span>
+  <span class="tag warn">Week 4 · Midterm window</span>
+  <h2>Op-amps II — Real-world limits</h2>
+  <p><strong>Concepts:</strong> finite open-loop gain; <strong>GBW</strong>; <strong>slew rate</strong>; input offset + bias current; output saturation. <em>When each one bites.</em></p>
+  <div class="row"><span class="label">Slides</span><span><span class="file">mc_opamp_4</span>, <span class="file">mc_opamp_5</span></span></div>
+  <div class="row"><span class="label">Reading</span><span>Franco Ch. 5–6 (real op-amp limitations)</span></div>
+  <div class="row"><span class="label">LTspice lab</span><span>Tweak <code>UniversalOpAmp2</code> parameters (<code>Avol</code>, <code>GBW</code>, <code>SR</code>, <code>Vos</code>) without rewiring.
     <ol>
-      <li>Design CE amplifier for A<sub>v</sub> ≈ −20, Z<sub>in</sub> ≥ 5 kΩ, V<sub>CC</sub> = 12 V. Verify in sim, compare with hand calc.</li>
-      <li>Remove emitter bypass cap → re-measure gain → explain the drop.</li>
-      <li>Push input amplitude until visible distortion; identify mechanism (cutoff vs saturation).</li>
-      <li>Build emitter follower; measure Z<sub>out</sub> by loading.</li>
+      <li>GBW vs gain — sweep gain, find time-domain bandwidth, verify GBW = const.</li>
+      <li>Slew rate — large step, extract SR from output slope.</li>
+      <li>Offset-driven drift in an integrator.</li>
     </ol>
   </span></div>
-  <div class="deliverable"><strong>Deliverable:</strong> CE amplifier with measured A<sub>v</sub>, BW, Z<sub>in</sub>, Z<sub>out</sub> — hand calc vs sim in a table. <br><strong>🎯 Pick the final project this week</strong> (see project list below).</div>
+  <div class="deliverable"><strong>Deliverable:</strong> Slew-rate-limited triangular output, annotated slope vs the parameter you set.</div>
+  <div class="midterm"><strong>📌 Midterm submission</strong> likely lands around end of Week 4 / start of Week 5. Consolidate Weeks 1–4 into a short report (1 page per week + LTspice files + reflection). Pull it together as you go — don't leave it for the last day.</div>
 </div>
 
 <div class="week">
   <span class="tag">Week 5</span>
-  <h2>MOSFETs (lighter touch) + frequency response</h2>
-  <p><strong>Concepts:</strong> MOSFET square-law model, biasing, CS amplifier (quick comparison vs CE), Bode plots in detail, dominant pole, GBW, Miller effect (intuition only).</p>
-  <div class="row"><span class="label">Slides</span><span><span class="file">mc_bode_1.pdf</span>, <span class="file">missedclass/mc_bode_1.pdf.pdf</span></span></div>
-  <div class="row"><span class="label">Reading</span><span>S&amp;S Ch. 5 — MOSFET operation + CS amplifier; revisit Bode intuition from Ch. 1</span></div>
-  <div class="row"><span class="label">HW</span><span><span class="file">HW/MOS.pdf</span>, <span class="file">HW/3_bode+rectifier.pdf</span> (Bode portion)</span></div>
+  <h2>Op-amps III — Non-linear: Schmitt, comparators, oscillators</h2>
+  <p>Flip from negative to <em>positive</em> feedback. Building blocks for the 555 timer and a lot of signal-conditioning.</p>
+  <p><strong>Concepts:</strong> comparator (open-loop op-amp); <strong>Schmitt trigger</strong> + hysteresis; relaxation oscillator (Schmitt + RC); precision rectifier preview.</p>
+  <div class="row"><span class="label">Slides</span><span><span class="file">mc_opamp_6</span></span></div>
+  <div class="row"><span class="label">Reading</span><span>Franco — comparators / non-linear chapter</span></div>
   <div class="row"><span class="label">LTspice lab</span><span>
     <ol>
-      <li>CS amplifier mirror of the Week-4 CE design; compare gain, Z<sub>in</sub> (much higher), distortion.</li>
-      <li>Measure CE amplifier frequency response: <code>.ac dec 50 1 1G</code>. Identify low-frequency pole (coupling cap), high-frequency roll-off.</li>
+      <li>Open-loop comparator — sine in, square out.</li>
+      <li>Inverting Schmitt trigger — design for ±2 V thresholds; verify no chatter on noisy zero-crossings.</li>
+      <li>Relaxation oscillator at 1 kHz — measure period, hand calc.</li>
+      <li>Bonus: precision half-wave rectifier (works below 0.7 V).</li>
     </ol>
   </span></div>
-  <div class="deliverable"><strong>Deliverable:</strong> Annotated Bode plot of Week-4 CE amp, with poles labeled and cause of each explained.</div>
+  <div class="deliverable"><strong>Deliverable:</strong> Relaxation oscillator within 10 % of target frequency. V<sub>cap</sub> and V<sub>out</sub> on the same plot.</div>
 </div>
 
 <div class="week">
   <span class="tag">Week 6</span>
-  <h2>Op-amps — ideal + classic topologies</h2>
-  <p><strong>Concepts:</strong> Golden rules, virtual short, inverting / non-inverting / summing / difference / integrator / differentiator, instrumentation amplifier.</p>
-  <div class="row"><span class="label">Slides</span><span><span class="file">mc_opamp_1.pdf</span> → <span class="file">mc_opamp_3.pdf</span></span></div>
-  <div class="row"><span class="label">Reading</span><span>Franco Ch. 1–2 (op-amp basics + resistive networks); S&amp;S Ch. 2 for cross-reference</span></div>
-  <div class="row"><span class="label">HW</span><span><span class="file">HW/2_instrumentation.pdf</span> (+ <span class="file">2_sol.pdf</span>)</span></div>
-  <div class="row"><span class="label">LTspice lab</span><span>Use <code>UniversalOpAmp2</code> (built-in, parameterizable) so they can later play with finite GBW.
+  <h2>Active filters + instrumentation amp</h2>
+  <p><strong>Concepts:</strong> Sallen-Key topology (LP/HP/BP); instrumentation amplifier (3-op-amp); CMRR.</p>
+  <div class="row"><span class="label">Reading</span><span>Franco — filter chapter + inst-amp chapter</span></div>
+  <div class="row"><span class="label">HW (bonus)</span><span><span class="file">Output_stage.pdf</span>, <span class="file">Current_mirror.pdf</span></span></div>
+  <div class="row"><span class="label">LTspice lab</span><span>
     <ol>
-      <li>Inverting amp, gain −10. Verify.</li>
-      <li>Non-inverting summer.</li>
-      <li>Integrator: square in → triangle out. Add large feedback R to prevent DC drift; explain why.</li>
-      <li>3-op-amp instrumentation amplifier — verify CMRR by driving both inputs with the same signal.</li>
+      <li>Sallen-Key LPF at 1 kHz, Q = 0.707. Drive at f<sub>c</sub>/10, f<sub>c</sub>, 10·f<sub>c</sub>; verify amplitude ratios.</li>
+      <li>3-op-amp instrumentation amp, gain ×10. Compute CMRR = 20 log(A<sub>diff</sub>/A<sub>cm</sub>).</li>
     </ol>
   </span></div>
-  <div class="deliverable"><strong>Deliverable:</strong> Instrumentation amp with measured CMRR (≥ 60 dB) at 1 kHz.</div>
+  <div class="deliverable"><strong>Deliverable:</strong> Instrumentation amp with CMRR ≥ 60 dB at 1 kHz.</div>
 </div>
 
 <div class="week">
-  <span class="tag">Week 7</span>
-  <h2>Real op-amps + active filters</h2>
-  <p><strong>Concepts:</strong> Finite open-loop gain, GBW, slew rate, input offset, input bias current, output saturation — and <em>when each bites</em>. Sallen-Key low-pass / high-pass / band-pass; Q and damping.</p>
-  <div class="row"><span class="label">Slides</span><span><span class="file">mc_opamp_4.pdf</span> → <span class="file">mc_opamp_6.pdf</span></span></div>
-  <div class="row"><span class="label">Reading</span><span>Franco Ch. 5–6 (real op-amp limitations) + filter chapter</span></div>
-  <div class="row"><span class="label">HW</span><span><span class="file">HW/Output_stage.pdf</span>, <span class="file">HW/Current_mirror.pdf</span> (bonus — for the curious)</span></div>
-  <div class="row"><span class="label">LTspice lab</span><span>
-    <ol>
-      <li>Take Week-6 non-inverting amp; sweep GBW of <code>UniversalOpAmp2</code> and watch bandwidth shrink. Plot GBW = constant.</li>
-      <li>Slew-rate experiment: drive with large fast step, observe triangular output, extract SR.</li>
-      <li>Sallen-Key 2nd-order LPF at 1 kHz, Q = 0.707; verify −40 dB/decade slope.</li>
-    </ol>
-  </span></div>
-  <div class="deliverable"><strong>Deliverable:</strong> Sallen-Key filter design — choose specs (e.g. audio anti-alias at 15 kHz), simulate, justify component choices.</div>
+  <span class="tag">Week 7 · Project starts</span>
+  <h2>Final project — design + first build</h2>
+  <p>Pick one of the two projects. Both lean on weeks 3–6.</p>
+
+  <h3>Option A — Analog differential-equation solver</h3>
+  <p>Voltage at each node = a variable in the equation. Integrators integrate; summers + inverters wire up the equation. Solve a mass-spring-damper to get a damped sine on screen.</p>
+  <ul>
+    <li>2× integrators · 1× summer · 1× inverter · pre-charged caps for ICs.</li>
+    <li>References: Franco — analog computation section.</li>
+  </ul>
+
+  <h3>Option B — 555 timer from scratch (not the IC)</h3>
+  <p>Rebuild the NE555 internals from discrete op-amps: two comparators, an SR latch, a discharge switch. Run as astable oscillator <em>or</em> monostable one-shot.</p>
+  <ul>
+    <li>2× comparators with 1/3 V<sub>CC</sub> and 2/3 V<sub>CC</sub> thresholds · SR latch · discharge transistor.</li>
+    <li>Reference: <a href="https://www.ti.com/lit/ds/symlink/lm555.pdf">TI LM555 datasheet</a> — functional block diagram.</li>
+  </ul>
+
+  <h3>Option C — Lotka-Volterra solver 🌶️ <em>stretch challenge</em></h3>
+  <p>Predator-prey ODEs: <code>dx/dt = αx − βxy</code>, <code>dy/dt = δxy − γy</code>. Same idea as Option A, but the <strong>xy</strong> terms are non-linear, so you need an <strong>analog multiplier</strong> (AD633). The reward: plot V<sub>x</sub> vs V<sub>y</sub> on an X-Y scope plot — the famous predator-prey limit cycle.</p>
+  <ul>
+    <li>2× integrators · 2× analog multipliers · summers + inverters · IC caps.</li>
+    <li>Reference: <a href="https://www.analog.com/media/en/technical-documentation/data-sheets/AD633.pdf">AD633 datasheet</a>; Franco's analog computation chapter.</li>
+  </ul>
+
+  <div class="deliverable"><strong>Week 7 deliverable:</strong> choice locked Day 1, block diagram on paper, first half built and simulating, hand calc of key parameters.</div>
 </div>
 
 <div class="week">
   <span class="tag">Week 8</span>
-  <h2>Project + presentation</h2>
+  <h2>Polish + report + presentation</h2>
   <ul>
-    <li>Finish the chosen project (started week 4–5).</li>
-    <li>Final report: 4–6 pages — specs, design choices, hand calcs, LTspice schematics, sim results, what didn't work the first time and how it was fixed.</li>
-    <li>15-minute presentation / demo walkthrough.</li>
+    <li>Tune values to hit specs; stress-test by sweeping components / GBW / ICs.</li>
+    <li>Final report (4–6 pages): specs, schematic, hand calcs, sim results, failure-modes.</li>
+    <li>15-min presentation: top-down walk-through + live LTspice demo + reflection.</li>
   </ul>
 </div>
 
-<h2>Final-project options</h2>
-<p>Pick by interest in Week 4; all scoped for ~4 weeks of part-time work.</p>
+<h2>Final-project options (recap)</h2>
 <ol class="project-list">
-  <li><strong>Audio preamp + Baxandall tone control.</strong> BJT CE input → op-amp Baxandall bass/treble → op-amp output buffer. Exercises biasing, gain staging, active filters, real op-amp limits. <em>Reference:</em> Franco Ch. 3 (single-amp filters).</li>
-  <li><strong>Function generator (sine / square / triangle).</strong> Op-amp relaxation oscillator → integrator (triangle) → diode-network sine shaper. Exercises Schmitt, integrator, diode shaping.</li>
-  <li><strong>Two-stage discrete amplifier with measured specs.</strong> CE → emitter follower. Target: A<sub>v</sub> ≥ 50, Z<sub>in</sub> ≥ 10 kΩ, Z<sub>out</sub> ≤ 100 Ω, BW ≥ 50 kHz, THD &lt; 1% at 1 V<sub>pp</sub>. Most rigorous.</li>
-  <li><strong>Thermistor / strain-gauge front-end.</strong> Wheatstone bridge → instrumentation amp → Sallen-Key anti-alias filter. Exercises CMRR, offset/drift, filtering. Closest to "real engineering."</li>
+  <li><strong>Analog differential-equation solver.</strong> Integrators + summers + inverters wired to solve an ODE. Mass-spring-damper → damped sinusoid as the canonical demo.</li>
+  <li><strong>555 timer from scratch.</strong> Comparators + SR latch + discharge switch — same internals as the NE555. Astable or monostable mode.</li>
+  <li><strong>Lotka-Volterra solver 🌶️ (stretch).</strong> Predator-prey ODEs with non-linear <code>xy</code> coupling — needs an analog multiplier (AD633). Reward: a closed limit cycle on an X-Y plot.</li>
 </ol>
-<div class="recommend"><strong>My recommendation:</strong> #1 or #2 — fun, motivating, and the mentee genuinely <em>hears</em> the result (you can play a <code>.wav</code> into LTspice with a PWL file and look at the output).</div>
 
 <div class="ltspice-section">
   <h2>LTspice things to teach explicitly</h2>
   <p>These trip everyone up — cover them deliberately rather than letting the mentee fight each one alone.</p>
   <ul>
     <li><code>.tran 0 10m 0 1u</code> — why max-step matters (default can alias HF content).</li>
-    <li><code>.ac dec &lt;pts&gt; &lt;fstart&gt; &lt;fstop&gt;</code> — log sweep; cursors for −3 dB.</li>
     <li><code>.dc V1 &lt;start&gt; &lt;stop&gt; &lt;step&gt;</code> with nested <code>.step param</code> for family of curves.</li>
-    <li><code>.op</code> for quick Q-point check.</li>
-    <li><code>.measure</code> directives — e.g. <code>.meas AC gain MAX V(out)</code> for automated gain extraction.</li>
-    <li>Importing manufacturer models: <code>.include</code> / <code>.lib</code>, and adding symbols for parts not in the library (right-click → Pick New Symbol).</li>
-    <li><code>UniversalOpAmp2</code> parameters: <code>Avol</code>, <code>GBW</code>, <code>SR</code>, <code>Vos</code> — change to study non-idealities without changing the schematic.</li>
-    <li>Probing <strong>current</strong> through a component (Alt-click) vs voltage.</li>
-    <li>Plotting <strong>power</strong>: hold Alt while clicking a component to plot V·I.</li>
-    <li>Saving plot settings as <code>.plt</code> so reopening a sim gives the same view.</li>
+    <li><code>.op</code> for a quick DC operating-point check.</li>
+    <li><code>.measure</code> directives — e.g. <code>.meas TRAN tp TRIG V(out)=1 RISE=1 TARG V(out)=1 RISE=2</code> for period.</li>
+    <li>Importing manufacturer models: <code>.include</code> / <code>.lib</code>; adding symbols for parts not in the library.</li>
+    <li><code>UniversalOpAmp2</code> parameters: <code>Avol</code>, <code>GBW</code>, <code>SR</code>, <code>Vos</code> — study non-idealities without changing the schematic.</li>
+    <li>Probing current (Alt-click a component) vs voltage (click a wire).</li>
+    <li>Plotting power: Alt-click while holding shift — V·I.</li>
+    <li>Saving plot settings as <code>.plt</code> so the same view restores next time.</li>
   </ul>
 </div>
 
 <div class="tips">
-  <h2 style="margin-top:0;">Pacing tips for you as mentor</h2>
+  <h2 style="margin-top:0;">Pacing tips for the mentor</h2>
   <ul>
-    <li><strong>Weekly 45-min call:</strong> mentee walks you through their LTspice file; you ask "what if I change X?" Don't lecture — debug.</li>
-    <li><strong>Make them break things on purpose:</strong> remove the bypass cap, halve β, push input amplitude. Broken behaviour is where intuition lives.</li>
-    <li><strong>Skip without guilt:</strong> deep semiconductor physics, h-parameters, manual high-frequency analysis past the dominant pole. Sim handles those.</li>
-    <li><strong>Push for hand calc <em>before</em> every simulation.</strong> If sim disagrees with calc, that's the most valuable moment of the week — don't let them just trust the sim.</li>
-    <li><strong>Backup resources:</strong> Razavi's <em>Fundamentals of Microelectronics</em> lectures on YouTube for intuition; <em>Art of Electronics</em> (Horowitz &amp; Hill) for the "why does anyone do it this way" answers.</li>
+    <li><strong>Weekly 45-min call:</strong> mentee walks you through their LTspice file; you ask "what if I change X?". Don't lecture — debug.</li>
+    <li><strong>Break things on purpose:</strong> bump <code>Vos</code> on the integrator; halve the Schmitt's hysteresis; push input amplitude past saturation. The broken behaviour is where intuition lives.</li>
+    <li><strong>Skip without guilt:</strong> deep semiconductor physics, Bode formalism, h-parameters, manual HF analysis. The op-amp focus means we don't need them.</li>
+    <li><strong>Push for hand calc <em>before</em> every simulation.</strong> When sim disagrees with calc, that's the most valuable moment of the week.</li>
+    <li><strong>Backup resources:</strong> Razavi's <em>Fundamentals of Microelectronics</em> lectures on YouTube; Horowitz &amp; Hill, <em>Art of Electronics</em>.</li>
   </ul>
 </div>
 

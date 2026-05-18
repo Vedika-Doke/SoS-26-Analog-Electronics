@@ -1,6 +1,6 @@
 # SoS '26 — Analog Electronics
 
-Structured 8-week curriculum I'm using to mentor a Summer of Science (SoS) student in analog electronics. Builds fundamentals — linear networks, diodes, BJTs, MOSFETs, op-amps, filters — through weekly readings (Sedra/Smith, Sergio Franco), problem sets, and LTspice simulation labs, culminating in a discrete + op-amp design project.
+Structured 8-week curriculum I'm using to mentor a Summer of Science (SoS) student in analog electronics. Heavy focus on **op-amps** — ideal linear circuits, real-world limits, and non-linear applications (Schmitt triggers, comparators, oscillators) — culminating in a project where the mentee picks between an **analog differential-equation solver** or a **555 timer built from scratch**.
 
 **Mentor:** Vedika Doke · **Institute:** IIT Bombay · **Duration:** 8 weeks
 
@@ -11,16 +11,22 @@ Structured 8-week curriculum I'm using to mentor a Summer of Science (SoS) stude
 | Week | Topic | Key deliverable |
 |------|-------|-----------------|
 | 0 | LTspice setup | Tool installed, simple sim run |
-| 1 | Linear networks + LTspice fluency | RC Bode plot vs hand calc |
-| 2 | Diodes, rectifiers, wave-shaping | Ripple-vs-C plot + custom clipper |
-| 3 | BJT — DC bias, load lines | Q-point stability across β |
-| 4 | BJT amplifiers (small-signal) | CE amp: A_v, BW, Z_in, Z_out measured |
-| 5 | MOSFETs + frequency response | Annotated Bode plot of CE amp |
-| 6 | Op-amps — ideal topologies | Instrumentation amp, CMRR ≥ 60 dB |
-| 7 | Real op-amps + active filters | Sallen-Key filter design |
-| 8 | Final project + presentation | Report + demo |
+| 1 | Linear networks + LTspice fluency | RC step response, τ measured |
+| 2 | Diodes + BJT/MOS (light touch) | Bridge rectifier + custom clipper |
+| 3 | Op-amps I — ideal linear | Integrator producing triangle wave |
+| 4 | Op-amps II — real limits *(midterm window)* | Slew-rate measurement |
+| 5 | Op-amps III — non-linear (Schmitt, comparators, oscillators) | Relaxation oscillator at target frequency |
+| 6 | Active filters + instrumentation amp | Inst. amp with CMRR ≥ 60 dB |
+| 7 | Final project — design + first build | Choice locked, half built |
+| 8 | Final project — polish + report + presentation | Report + demo |
 
 Full plan: [`SoS_Plan.html`](SoS_Plan.html) (open in browser).
+
+## Final project options (pick in Week 7)
+
+1. **Analog differential-equation solver** — integrators + summers + inverters wired to solve an ODE (e.g. mass-spring-damper → damped sine).
+2. **555 timer from scratch** — recreate the NE555 internals (two comparators + SR latch + discharge switch) in astable or monostable mode.
+3. **Lotka-Volterra solver 🌶️** *(stretch)* — predator-prey ODEs with `xy` non-linearities; needs an analog multiplier (AD633). Shows the famous closed-orbit limit cycle on an X-Y plot.
 
 ## Repo layout
 
@@ -30,20 +36,23 @@ Full plan: [`SoS_Plan.html`](SoS_Plan.html) (open in browser).
 ├── weeks/
 │   ├── week0/           LTspice onboarding
 │   ├── week1/ … week8/  notes, labs, deliverables per week
-├── ltspice/             shared .asc files, models, cheat-sheet
+├── ltspice/             shared .asc files, SPICE models
 └── resources/           external links and references
 ```
 
-## Final project options
+## Cadence
+- One 45-min meet per week.
+- Content released week by week (current week's folder is the active one).
+- Midterm consolidation around the Week 4 / Week 5 boundary.
 
-Picked in Week 4, built through weeks 5–8:
-
-1. Audio preamp + Baxandall tone control
-2. Function generator (sine / square / triangle)
-3. Two-stage discrete amplifier with measured specs
-4. Thermistor / strain-gauge front-end
+## Resource credits
+- **Sedra & Smith**, *Microelectronic Circuits* — [Drive folder](https://drive.google.com/drive/folders/1AWumX1rr4MDby0pJfxpg7-JE0xuE8mdn?usp=drive_link)
+- **Sergio Franco**, *Design with Op-Amps and Analog ICs* — [Drive folder](https://drive.google.com/drive/folders/17T1Mnk_SVdqIi2b4Fn-qmpbAn6tkMbvd?usp=drive_link)
+- **Prof. M. B. Patil, EE204 slides (IIT Bombay)** — [course page](https://www.ee.iitb.ac.in/~sequel/course_material.html) · [Drive mirror](https://drive.google.com/drive/folders/1jPG5-WahBaDfoCOUDKTlCq3mqKhl5vyN?usp=drive_link)
+- **Lotka-Volterra project brief** — courtesy of EESA's *opAmped*, Learner's Space, IIT Bombay (Summer 2025). [Drive folder](https://drive.google.com/drive/folders/1Eb89DbthMYpdsaxMRP_hKD4yDCrUxa3Q?usp=drive_link)
+- LTspice install + tutorial videos — Drive links inside [`weeks/week0/`](weeks/week0/)
 
 ## Notes
-
-- Textbook PDFs (Sedra/Smith, Sergio Franco) and EE204 course material are kept locally but gitignored — copyrighted, not for redistribution.
-- All LTspice simulations target LTspice XVII or later.
+- Textbook PDFs are not committed (copyright) — use the Drive links above.
+- LTspice install/tutorial videos: see [`weeks/week0/`](weeks/week0/).
+- All simulations target LTspice XVII or later.
