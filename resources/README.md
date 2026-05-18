@@ -9,7 +9,6 @@
 ## EE204 course material
 - Lecture slides — Prof. M. B. Patil's course page: https://www.ee.iitb.ac.in/~sequel/course_material.html
   - Mirror (Drive): https://drive.google.com/drive/folders/1jPG5-WahBaDfoCOUDKTlCq3mqKhl5vyN?usp=drive_link
-- Problem sets with solutions — `EE204 (Analog Circuits)/HW/`
 
 ## External
 - LTspice download — Analog Devices website
