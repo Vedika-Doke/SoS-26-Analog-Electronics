@@ -15,7 +15,7 @@ Structured 8-week curriculum I'm using to mentor a Summer of Science (SoS) stude
 | 2 | Diodes + BJT/MOS (light touch) | Bridge rectifier + custom clipper |
 | 3 | Op-amps I — ideal linear | Integrator producing triangle wave |
 | 4 | Op-amps II — real limits *(midterm window)* | Slew-rate measurement |
-| 5 | Op-amps III — non-linear (Schmitt, comparators, oscillators) | Relaxation oscillator at target frequency |
+| 5 | Op-amps III — non-linear (Schmitt, comparators, oscillators) + ADC/DAC primer | Relaxation oscillator at target frequency |
 | 6 | Active filters + instrumentation amp | Inst. amp with CMRR ≥ 60 dB |
 | 7 | Final project — design + first build | Choice locked, half built |
 | 8 | Final project — polish + report + presentation | Report + demo |

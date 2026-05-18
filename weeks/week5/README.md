@@ -23,3 +23,28 @@ So far we've used op-amps with negative feedback. This week flips the script: **
 
 ## Deliverable
 Relaxation oscillator with measured frequency within 10% of design. Show: schematic, V_cap (triangle-ish ramp) and V_out (square) on the same plot, hand calc of period.
+
+---
+
+## Bonus topic: ADC & DAC fundamentals
+
+Now that you've seen comparators and summing amplifiers, you can build (or at least understand) every common ADC and DAC topology. This is a *short* survey — enough to recognize them and pick the right one.
+
+### DAC (Digital → Analog)
+- **Weighted-resistor DAC** — a summing op-amp with binary-weighted input resistors (R, 2R, 4R, 8R…). Direct application of the Week-3 summing amp. Simple but doesn't scale: resistor spread blows up past ~8 bits.
+- **R-2R ladder DAC** — only two resistor values, regardless of bit count. The industry workhorse.
+
+### ADC (Analog → Digital)
+- **Flash ADC** — `2^N − 1` comparators in parallel. Fastest possible. Costly past 8 bits.
+- **Counter-type / ramp ADC** — counter drives a DAC; output compared to input; counter stops when DAC ≥ input. Simple, slow.
+- **Successive-approximation (SAR) ADC** — binary search using a DAC + comparator. The most common embedded-MCU ADC.
+- **Sigma-delta (Σ-Δ)** — oversampling + noise shaping. High resolution at low speed (audio).
+
+### Key spec
+**Resolution** = full-scale range / 2^N. E.g. 10 V FS, 10 bits → ~10 mV per LSB.
+
+### LTspice mini-lab (optional)
+Build a 4-bit weighted-resistor DAC: summing op-amp with R, 2R, 4R, 8R inputs driven by four DC sources (1/0 representing logic high/low). Sweep through all 16 codes (`.step param`) and verify the staircase output.
+
+### HW for this section
+- `resources/hw/mbp_2018_hw12.pdf` — covers DAC resolution, weighted-resistor DAC with tolerance analysis, flash vs counter ADC, **and** 555 timer internals (monostable + astable). Recommend doing Q1–Q11 here.

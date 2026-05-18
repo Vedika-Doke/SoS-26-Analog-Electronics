@@ -36,6 +36,7 @@ Recreate the internals of the legendary NE555 using discrete op-amps: two compar
 - TI LM555 datasheet — functional block diagram page is the canonical schematic. https://www.ti.com/lit/ds/symlink/lm555.pdf
 - Franco — Schmitt trigger + relaxation oscillator sections. [Drive folder](https://drive.google.com/drive/folders/17T1Mnk_SVdqIi2b4Fn-qmpbAn6tkMbvd?usp=drive_link)
 - EE204 slides `mc_opamp_6.pdf` — Prof. M. B. Patil. [Drive mirror](https://drive.google.com/drive/folders/1jPG5-WahBaDfoCOUDKTlCq3mqKhl5vyN?usp=drive_link) · [Source](https://www.ee.iitb.ac.in/~sequel/course_material.html)
+- EE204 HW12 (`resources/hw/mbp_2018_hw12.pdf`) Q12–Q14 — drawn-out 555 monostable + astable schematics with comparator/SR-latch internals. Highly recommended.
 
 ---
 

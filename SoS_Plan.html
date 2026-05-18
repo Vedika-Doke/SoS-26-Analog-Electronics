@@ -76,7 +76,7 @@
     <tr><td>2</td><td>Diodes + BJT/MOS (light touch)</td><td>Bridge rectifier + custom clipper</td></tr>
     <tr><td>3</td><td>Op-amps I — ideal linear</td><td>Integrator producing triangle wave</td></tr>
     <tr><td>4</td><td>Op-amps II — real limits <em>(midterm window)</em></td><td>Slew-rate measurement</td></tr>
-    <tr><td>5</td><td>Op-amps III — Schmitt, comparators, oscillators</td><td>Relaxation oscillator at target frequency</td></tr>
+    <tr><td>5</td><td>Op-amps III — Schmitt, comparators, oscillators (+ ADC/DAC primer)</td><td>Relaxation oscillator at target frequency</td></tr>
     <tr><td>6</td><td>Active filters + instrumentation amp</td><td>Inst. amp with CMRR ≥ 60 dB</td></tr>
     <tr><td>7</td><td>Final project — design + first build</td><td>Choice locked, half built</td></tr>
     <tr><td>8</td><td>Final project — polish + report + demo</td><td>Working circuit + presentation</td></tr>
@@ -195,6 +195,16 @@ Weekly deliverable: hand calculations + LTspice schematic + simulation plots + 1
     </ol>
   </span></div>
   <div class="deliverable"><strong>Deliverable:</strong> Relaxation oscillator within 10 % of target frequency. V<sub>cap</sub> and V<sub>out</sub> on the same plot.</div>
+
+  <h3>Bonus topic — ADC/DAC primer</h3>
+  <p>Now that you've seen comparators and summing amps, you can understand every common ADC/DAC topology. Short survey:</p>
+  <ul>
+    <li><strong>DAC:</strong> weighted-resistor (a summing amp) → R-2R ladder (industry standard).</li>
+    <li><strong>ADC:</strong> flash (parallel comparators, fastest) → counter / ramp → successive-approximation (SAR, most common) → sigma-delta (audio).</li>
+    <li><strong>Resolution:</strong> full-scale range ÷ 2<sup>N</sup>.</li>
+    <li><strong>Mini-lab:</strong> build a 4-bit weighted-resistor DAC, sweep all 16 codes, verify staircase.</li>
+    <li><strong>HW:</strong> EE204 HW12 Q1–Q11 (DAC tolerance analysis, flash vs counter ADC).</li>
+  </ul>
 </div>
 
 <div class="week">

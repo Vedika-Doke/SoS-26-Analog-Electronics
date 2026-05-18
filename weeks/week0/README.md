@@ -41,7 +41,7 @@ The course is **op-amp heavy**. We touch diodes, BJTs and MOSFETs lightly in Wee
 | 2 | Diodes + BJT/MOS (light touch) | Bridge rectifier + your own clipper |
 | 3 | Op-amps I — ideal linear | Integrator turning square waves into triangles |
 | 4 | Op-amps II — real limits *(midterm window)* | Slew-rate measurement |
-| 5 | Op-amps III — non-linear: Schmitt, comparators, oscillators | Relaxation oscillator at target frequency |
+| 5 | Op-amps III — non-linear: Schmitt, comparators, oscillators (+ ADC/DAC primer) | Relaxation oscillator at target frequency |
 | 6 | Active filters + instrumentation amp | Inst. amp with CMRR ≥ 60 dB |
 | 7 | Final project — design + first build | Choice locked, half built |
 | 8 | Final project — polish + report + demo | Working circuit + presentation |
