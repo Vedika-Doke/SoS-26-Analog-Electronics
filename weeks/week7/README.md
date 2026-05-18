@@ -40,7 +40,7 @@ Recreate the internals of the legendary NE555 using discrete op-amps: two compar
 
 ---
 
-## Option C — Lotka-Volterra solver 🌶️ *stretch challenge*
+## Option C — Lotka-Volterra solver *(stretch challenge)*
 
 The predator-prey equations:
 

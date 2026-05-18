@@ -4,6 +4,8 @@ Structured 8-week curriculum I'm using to mentor a Summer of Science (SoS) stude
 
 **Mentor:** Vedika Doke · **Institute:** IIT Bombay · **Duration:** 8 weeks
 
+> 📋 **This repo is a guideline, not a rulebook.** You'll have to submit your own **Plan of Action (POA)** to the SoS coordinators. You can follow this trajectory, mix and match, or chart your own — whatever helps *you* learn. I'll back whichever direction you pick; this just exists so we have a shared baseline to deviate from.
+
 ---
 
 ## Plan at a glance
@@ -14,9 +16,9 @@ Structured 8-week curriculum I'm using to mentor a Summer of Science (SoS) stude
 | 1 | Linear networks + LTspice fluency | RC step response, τ measured |
 | 2 | Diodes + BJT/MOS (light touch) | Bridge rectifier + custom clipper |
 | 3 | Op-amps I — ideal linear | Integrator producing triangle wave |
-| 4 | Op-amps II — real limits *(midterm window)* | Slew-rate measurement |
-| 5 | Op-amps III — non-linear (Schmitt, comparators, oscillators) + ADC/DAC primer | Relaxation oscillator at target frequency |
-| 6 | Active filters + instrumentation amp | Inst. amp with CMRR ≥ 60 dB |
+| 4 | Op-amps II — real-world limits *(midterm window)* | Gain-bandwidth tradeoff measured at 3 gain settings |
+| 5 | Instrumentation amplifier + active filters | Inst. amp with CMRR ≥ 60 dB |
+| 6 | Op-amps III — non-linear (Schmitt, comparators, oscillators) + ADC/DAC primer | Relaxation oscillator at target frequency |
 | 7 | Final project — design + first build | Choice locked, half built |
 | 8 | Final project — polish + report + presentation | Report + demo |
 
@@ -26,7 +28,7 @@ Full plan: [`SoS_Plan.html`](SoS_Plan.html) (open in browser).
 
 1. **Analog differential-equation solver** — integrators + summers + inverters wired to solve an ODE (e.g. mass-spring-damper → damped sine).
 2. **555 timer from scratch** — recreate the NE555 internals (two comparators + SR latch + discharge switch) in astable or monostable mode.
-3. **Lotka-Volterra solver 🌶️** *(stretch)* — predator-prey ODEs with `xy` non-linearities; needs an analog multiplier (AD633). Shows the famous closed-orbit limit cycle on an X-Y plot.
+3. **Lotka-Volterra solver** *(stretch)* — predator-prey ODEs with `xy` non-linearities; needs an analog multiplier (AD633). Shows the famous closed-orbit limit cycle on an X-Y plot.
 
 ## Repo layout
 

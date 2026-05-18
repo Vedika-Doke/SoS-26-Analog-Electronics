@@ -5,7 +5,6 @@ Ideal op-amps don't exist. This week is about understanding *when each non-ideal
 ## Concepts
 - Finite open-loop gain → gain error in closed-loop circuits.
 - **Gain-Bandwidth Product (GBW)** → closed-loop bandwidth shrinks as you crank gain.
-- **Slew rate** → output can't change faster than SR (V/μs); kills large fast signals.
 - **Input offset voltage** and **input bias current** → DC errors, integrator drift.
 - **Output saturation** → can't swing rail-to-rail on most op-amps.
 
@@ -14,13 +13,13 @@ Ideal op-amps don't exist. This week is about understanding *when each non-ideal
 - **Prof. M. B. Patil's EE204 slides:** `mc_opamp_4` → `mc_opamp_5`. [Drive mirror](https://drive.google.com/drive/folders/1jPG5-WahBaDfoCOUDKTlCq3mqKhl5vyN?usp=drive_link) · [Source](https://www.ee.iitb.ac.in/~sequel/course_material.html)
 
 ## LTspice lab
-Use `UniversalOpAmp2` and edit its parameters (`Avol`, `GBW`, `SR`, `Vos`) directly — no rewiring needed.
-1. **GBW vs gain** — take a non-inverting amp; sweep gain (×1, ×10, ×100). At each gain, drive with a fast square edge or sine sweep and find the −3 dB point by *time-domain inspection* (when output amplitude drops noticeably). Verify GBW ≈ gain × bandwidth is constant.
-2. **Slew rate** — drive with a large step input (5 V); observe the output ramps linearly at SR. Extract SR from the slope.
-3. **Offset drift in an integrator** — take last week's integrator, set `Vos = 5mV`, run `.tran` for 1 second. Watch the output drift to the rail.
+Use `UniversalOpAmp2` and edit its parameters (`Avol`, `GBW`, `Vos`) directly — no rewiring needed.
+1. **GBW vs gain** — take a non-inverting amp; sweep gain (×1, ×10, ×100). At each gain, drive with a sine and find the frequency where output amplitude drops noticeably (~70% of low-freq value). Verify GBW ≈ gain × bandwidth is constant.
+2. **Offset drift in an integrator** — take last week's integrator, set `Vos = 5mV`, run `.tran` for 1 second. Watch the output drift to the rail. Discuss fixes (chopper, auto-zero, AC coupling).
+3. **Output saturation** — push the inverting amp's input until output clips at the supply rails. Confirm the amp can't swing fully rail-to-rail on a generic part.
 
 ## Deliverable
-A single plot showing slew-rate-limited triangular output from a large step. Annotate the slope (V/μs) and compare to the parameter you set.
+GBW table: at gains ×1, ×10, ×100, list the measured −3 dB frequency and verify the product is constant. Short explanation of why high gain ⇒ low bandwidth.
 
 ---
 

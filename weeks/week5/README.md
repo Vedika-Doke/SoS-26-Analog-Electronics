@@ -1,50 +1,22 @@
-# Week 5 — Op-amps III: Non-linear circuits (Schmitt, comparators, oscillators)
+# Week 5 — Instrumentation amplifier + active filters
 
-So far we've used op-amps with negative feedback. This week flips the script: **positive feedback**, **open-loop comparators**, and **regenerative switching**. These building blocks power the 555 timer and a huge chunk of analog signal-conditioning.
+Before we flip op-amps into non-linear territory, finish the *linear* applications. Two big workhorses: the instrumentation amplifier (sensor front-ends) and active filters (signal conditioning).
 
 ## Concepts
-- **Comparator** — open-loop op-amp as a 1-bit decision maker. Why you should use a dedicated comparator IC (LM311) instead of a slow op-amp in practice.
-- **Schmitt trigger** — comparator + positive feedback → hysteresis (two distinct thresholds, V_TH and V_TL). Kills chatter on noisy edges.
-  - Inverting and non-inverting variants.
-  - How to calculate the thresholds from the resistor divider.
-- **Relaxation oscillator** — Schmitt trigger + RC charging loop → square wave with frequency set by RC and the hysteresis window. This is *exactly* how the 555 timer works internally.
-- **Precision rectifier** preview (op-amp + diode) — overcoming the 0.7 V diode drop.
+- **Difference amplifier** recap — gain = R_f/R_in *only if* resistors are matched. Tolerance kills CMRR.
+- **3-op-amp instrumentation amplifier** — two buffers + a difference amp; gain set by a single resistor. CMRR is huge because matching only matters in the back stage.
+- **CMRR** intuition — differential signals survive, common-mode noise gets rejected. Compute CMRR = 20·log(A_diff / A_cm).
+- **Active filters** — why active beats passive (gain, no inductors, easy cascading).
+- **Sallen-Key topology** — 2nd-order low-pass / high-pass / band-pass. Pick R and C to set f_c and Q.
 
 ## Reading & slides
-- **Sergio Franco** — chapter on comparators / non-linear circuits. [Drive folder](https://drive.google.com/drive/folders/17T1Mnk_SVdqIi2b4Fn-qmpbAn6tkMbvd?usp=drive_link)
-- **Prof. M. B. Patil's EE204 slides:** `mc_opamp_6`. [Drive mirror](https://drive.google.com/drive/folders/1jPG5-WahBaDfoCOUDKTlCq3mqKhl5vyN?usp=drive_link) · [Source](https://www.ee.iitb.ac.in/~sequel/course_material.html)
-- Reference: TI LM555 datasheet (the 555 has a Schmitt + comparator structure we'll meet in the project). https://www.ti.com/lit/ds/symlink/lm555.pdf
+- **Sergio Franco** — instrumentation amplifier chapter + filter chapter. [Drive folder](https://drive.google.com/drive/folders/17T1Mnk_SVdqIi2b4Fn-qmpbAn6tkMbvd?usp=drive_link)
+- HW (from EE204): `2_instrumentation.pdf` (+ `2_sol.pdf`) — the harder problems this time.
 
 ## LTspice lab
-1. **Open-loop comparator** — `UniversalOpAmp2` with no feedback; threshold = 0 V. Drive with a sine, observe square output.
-2. **Inverting Schmitt trigger** — design for V_TH = +2 V, V_TL = −2 V with V_sat = ±10 V. Verify with a slow noisy sine; show output doesn't chatter on the zero-crossing.
-3. **Relaxation oscillator** — Schmitt trigger + RC feedback. Design for f ≈ 1 kHz. Measure period, compare with hand calc.
-4. **Bonus: precision half-wave rectifier** — works on signals smaller than 0.7 V.
+1. **3-op-amp instrumentation amplifier** — gain ×10 set by single resistor. Verify by hand calc.
+2. **CMRR measurement** — drive both inputs with the same 1 kHz signal (common-mode); then with opposite-polarity signals (differential). Compute CMRR.
+3. **Sallen-Key LPF** at f_c ≈ 1 kHz, Q = 0.707 (Butterworth). Test by driving with sines at f_c/10, f_c, 10·f_c — measure output amplitude at each. Verify the ratio drops by ~100× per decade above f_c (i.e. 2nd-order roll-off) using numbers, not log plots.
 
 ## Deliverable
-Relaxation oscillator with measured frequency within 10% of design. Show: schematic, V_cap (triangle-ish ramp) and V_out (square) on the same plot, hand calc of period.
-
----
-
-## Bonus topic: ADC & DAC fundamentals
-
-Now that you've seen comparators and summing amplifiers, you can build (or at least understand) every common ADC and DAC topology. This is a *short* survey — enough to recognize them and pick the right one.
-
-### DAC (Digital → Analog)
-- **Weighted-resistor DAC** — a summing op-amp with binary-weighted input resistors (R, 2R, 4R, 8R…). Direct application of the Week-3 summing amp. Simple but doesn't scale: resistor spread blows up past ~8 bits.
-- **R-2R ladder DAC** — only two resistor values, regardless of bit count. The industry workhorse.
-
-### ADC (Analog → Digital)
-- **Flash ADC** — `2^N − 1` comparators in parallel. Fastest possible. Costly past 8 bits.
-- **Counter-type / ramp ADC** — counter drives a DAC; output compared to input; counter stops when DAC ≥ input. Simple, slow.
-- **Successive-approximation (SAR) ADC** — binary search using a DAC + comparator. The most common embedded-MCU ADC.
-- **Sigma-delta (Σ-Δ)** — oversampling + noise shaping. High resolution at low speed (audio).
-
-### Key spec
-**Resolution** = full-scale range / 2^N. E.g. 10 V FS, 10 bits → ~10 mV per LSB.
-
-### LTspice mini-lab (optional)
-Build a 4-bit weighted-resistor DAC: summing op-amp with R, 2R, 4R, 8R inputs driven by four DC sources (1/0 representing logic high/low). Sweep through all 16 codes (`.step param`) and verify the staircase output.
-
-### HW for this section
-- `resources/hw/mbp_2018_hw12.pdf` — covers DAC resolution, weighted-resistor DAC with tolerance analysis, flash vs counter ADC, **and** 555 timer internals (monostable + astable). Recommend doing Q1–Q11 here.
+Instrumentation amplifier with measured CMRR ≥ 60 dB at 1 kHz. Table of common-mode and differential gains.

@@ -1,5 +1,7 @@
 # Week 0 — LTspice Setup
 
+> 📋 **About this repo:** it's a guideline, not a rulebook. You'll submit your own **Plan of Action (POA)** to the SoS coordinators — you can follow this trajectory, mix and match, or do something entirely different. I'll back whichever direction you pick; this just exists so we have a shared baseline.
+
 Onboarding before the program starts. Get LTspice installed and run one simulation.
 
 ## Steps
@@ -40,16 +42,16 @@ The course is **op-amp heavy**. We touch diodes, BJTs and MOSFETs lightly in Wee
 | 1 | Linear networks + LTspice fluency | RC step response, τ from waveform |
 | 2 | Diodes + BJT/MOS (light touch) | Bridge rectifier + your own clipper |
 | 3 | Op-amps I — ideal linear | Integrator turning square waves into triangles |
-| 4 | Op-amps II — real limits *(midterm window)* | Slew-rate measurement |
-| 5 | Op-amps III — non-linear: Schmitt, comparators, oscillators (+ ADC/DAC primer) | Relaxation oscillator at target frequency |
-| 6 | Active filters + instrumentation amp | Inst. amp with CMRR ≥ 60 dB |
+| 4 | Op-amps II — real-world limits *(midterm window)* | Gain-bandwidth tradeoff measured at 3 gain settings |
+| 5 | Instrumentation amplifier + active filters | Inst. amp with CMRR ≥ 60 dB |
+| 6 | Op-amps III — non-linear: Schmitt, comparators, oscillators (+ ADC/DAC primer) | Relaxation oscillator at target frequency |
 | 7 | Final project — design + first build | Choice locked, half built |
 | 8 | Final project — polish + report + demo | Working circuit + presentation |
 
 **Final project — pick one in Week 7:**
 1. **Analog differential-equation solver** — integrators + summers wired up to physically solve an ODE (e.g. a damped mass-spring oscillator). Voltage at each node *is* a variable.
 2. **555 timer from scratch** — recreate the legendary NE555 internals using discrete op-amps, comparators and a latch. Configure as astable oscillator or monostable one-shot.
-3. **Lotka-Volterra solver 🌶️** *(stretch challenge)* — predator-prey ODEs. Same idea as Option 1 but the `xy` terms are non-linear, so you'll learn to use an **analog multiplier** (AD633). The reward: an X-Y plot showing the famous predator-prey limit cycle.
+3. **Lotka-Volterra solver** *(stretch challenge)* — predator-prey ODEs. Same idea as Option 1 but the `xy` terms are non-linear, so you'll learn to use an **analog multiplier** (AD633). The reward: an X-Y plot showing the famous predator-prey limit cycle.
 
 **Midterm submission** likely happens around the Week 4 / Week 5 boundary — keep your weekly deliverables organized so you can compile a summary easily.
 

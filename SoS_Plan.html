@@ -67,6 +67,10 @@
   <strong>Cadence:</strong> <strong>At least one short meet per week</strong> (attendance matters — the mentor submits an involvement log); content released week by week. One buffer week (June 12–19) for catch-up.
 </div>
 
+<div class="meta" style="border-left-color:#d27620;background:#fbe4c5;">
+  📋 <strong>This plan is a guideline, not a rulebook.</strong> You'll submit your own <strong>Plan of Action (POA)</strong> to the SoS coordinators — feel free to follow this trajectory, mix and match, or chart your own course entirely. This exists so we have a shared baseline to discuss and deviate from.
+</div>
+
 <h2>At a glance</h2>
 <table>
   <thead><tr><th>Week</th><th>Topic</th><th>Key deliverable</th></tr></thead>
@@ -75,9 +79,9 @@
     <tr><td>1</td><td>Linear networks + LTspice fluency</td><td>RC step response, τ measured</td></tr>
     <tr><td>2</td><td>Diodes + BJT/MOS (light touch)</td><td>Bridge rectifier + custom clipper</td></tr>
     <tr><td>3</td><td>Op-amps I — ideal linear</td><td>Integrator producing triangle wave</td></tr>
-    <tr><td>4</td><td>Op-amps II — real limits <em>(midterm window)</em></td><td>Slew-rate measurement</td></tr>
-    <tr><td>5</td><td>Op-amps III — Schmitt, comparators, oscillators (+ ADC/DAC primer)</td><td>Relaxation oscillator at target frequency</td></tr>
-    <tr><td>6</td><td>Active filters + instrumentation amp</td><td>Inst. amp with CMRR ≥ 60 dB</td></tr>
+    <tr><td>4</td><td>Op-amps II — real-world limits <em>(midterm window)</em></td><td>Gain-bandwidth tradeoff at 3 gain settings</td></tr>
+    <tr><td>5</td><td>Instrumentation amplifier + active filters</td><td>Inst. amp with CMRR ≥ 60 dB</td></tr>
+    <tr><td>6</td><td>Op-amps III — Schmitt, comparators, oscillators (+ ADC/DAC primer)</td><td>Relaxation oscillator at target frequency</td></tr>
     <tr><td>7</td><td>Final project — design + first build</td><td>Choice locked, half built</td></tr>
     <tr><td>8</td><td>Final project — polish + report + demo</td><td>Working circuit + presentation</td></tr>
   </tbody>
@@ -165,23 +169,40 @@ Weekly deliverable: hand calculations + LTspice schematic + simulation plots + 1
 <div class="week">
   <span class="tag warn">Week 4 · Midterm window</span>
   <h2>Op-amps II — Real-world limits</h2>
-  <p><strong>Concepts:</strong> finite open-loop gain; <strong>GBW</strong>; <strong>slew rate</strong>; input offset + bias current; output saturation. <em>When each one bites.</em></p>
+  <p><strong>Concepts:</strong> finite open-loop gain; <strong>GBW</strong>; input offset + bias current; output saturation. <em>When each one bites.</em></p>
   <div class="row"><span class="label">Slides</span><span><span class="file">mc_opamp_4</span>, <span class="file">mc_opamp_5</span></span></div>
   <div class="row"><span class="label">Reading</span><span>Franco Ch. 5–6 (real op-amp limitations)</span></div>
-  <div class="row"><span class="label">LTspice lab</span><span>Tweak <code>UniversalOpAmp2</code> parameters (<code>Avol</code>, <code>GBW</code>, <code>SR</code>, <code>Vos</code>) without rewiring.
+  <div class="row"><span class="label">LTspice lab</span><span>Tweak <code>UniversalOpAmp2</code> parameters (<code>Avol</code>, <code>GBW</code>, <code>Vos</code>) without rewiring.
     <ol>
-      <li>GBW vs gain — sweep gain, find time-domain bandwidth, verify GBW = const.</li>
-      <li>Slew rate — large step, extract SR from output slope.</li>
-      <li>Offset-driven drift in an integrator.</li>
+      <li>GBW vs gain — sweep gain, find bandwidth, verify GBW = const.</li>
+      <li>Offset-driven drift in an integrator (<code>Vos = 5mV</code>, watch output rail).</li>
+      <li>Output saturation — push input until rails clip.</li>
     </ol>
   </span></div>
-  <div class="deliverable"><strong>Deliverable:</strong> Slew-rate-limited triangular output, annotated slope vs the parameter you set.</div>
+  <div class="deliverable"><strong>Deliverable:</strong> GBW table at gains ×1, ×10, ×100 — verify product stays constant; short note on why high gain ⇒ low bandwidth.</div>
   <div class="midterm"><strong>📌 Midterm submission</strong> likely lands around end of Week 4 / start of Week 5. Consolidate Weeks 1–4 into a short report (1 page per week + LTspice files + reflection). Pull it together as you go — don't leave it for the last day.</div>
 </div>
 
 <div class="week">
   <span class="tag">Week 5</span>
-  <h2>Op-amps III — Non-linear: Schmitt, comparators, oscillators</h2>
+  <h2>Instrumentation amplifier + active filters</h2>
+  <p>Linear op-amp applications before we flip into non-linear territory.</p>
+  <p><strong>Concepts:</strong> difference amp recap; 3-op-amp instrumentation amp; CMRR; active filters; Sallen-Key topology (LP/HP/BP).</p>
+  <div class="row"><span class="label">Reading</span><span>Franco — instrumentation-amp chapter + filter chapter</span></div>
+  <div class="row"><span class="label">HW</span><span><span class="file">2_instrumentation.pdf</span> — harder problems</span></div>
+  <div class="row"><span class="label">LTspice lab</span><span>
+    <ol>
+      <li>3-op-amp instrumentation amp, gain ×10; verify hand calc.</li>
+      <li>CMRR measurement (common-mode vs differential drive).</li>
+      <li>Sallen-Key LPF at 1 kHz, Q = 0.707. Drive at f<sub>c</sub>/10, f<sub>c</sub>, 10·f<sub>c</sub>; verify amplitude ratios (no log plots needed).</li>
+    </ol>
+  </span></div>
+  <div class="deliverable"><strong>Deliverable:</strong> Instrumentation amp with CMRR ≥ 60 dB at 1 kHz. Table of A<sub>diff</sub> and A<sub>cm</sub>.</div>
+</div>
+
+<div class="week">
+  <span class="tag">Week 6</span>
+  <h2>Op-amps III — Non-linear: Schmitt, comparators, oscillators (+ ADC/DAC)</h2>
   <p>Flip from negative to <em>positive</em> feedback. Building blocks for the 555 timer and a lot of signal-conditioning.</p>
   <p><strong>Concepts:</strong> comparator (open-loop op-amp); <strong>Schmitt trigger</strong> + hysteresis; relaxation oscillator (Schmitt + RC); precision rectifier preview.</p>
   <div class="row"><span class="label">Slides</span><span><span class="file">mc_opamp_6</span></span></div>
@@ -203,23 +224,8 @@ Weekly deliverable: hand calculations + LTspice schematic + simulation plots + 1
     <li><strong>ADC:</strong> flash (parallel comparators, fastest) → counter / ramp → successive-approximation (SAR, most common) → sigma-delta (audio).</li>
     <li><strong>Resolution:</strong> full-scale range ÷ 2<sup>N</sup>.</li>
     <li><strong>Mini-lab:</strong> build a 4-bit weighted-resistor DAC, sweep all 16 codes, verify staircase.</li>
-    <li><strong>HW:</strong> EE204 HW12 Q1–Q11 (DAC tolerance analysis, flash vs counter ADC).</li>
+    <li><strong>HW:</strong> EE204 HW12 — Q1–Q11 here; Q12–Q14 (555 monostable + astable) in Week 7.</li>
   </ul>
-</div>
-
-<div class="week">
-  <span class="tag">Week 6</span>
-  <h2>Active filters + instrumentation amp</h2>
-  <p><strong>Concepts:</strong> Sallen-Key topology (LP/HP/BP); instrumentation amplifier (3-op-amp); CMRR.</p>
-  <div class="row"><span class="label">Reading</span><span>Franco — filter chapter + inst-amp chapter</span></div>
-  <div class="row"><span class="label">HW (bonus)</span><span><span class="file">Output_stage.pdf</span>, <span class="file">Current_mirror.pdf</span></span></div>
-  <div class="row"><span class="label">LTspice lab</span><span>
-    <ol>
-      <li>Sallen-Key LPF at 1 kHz, Q = 0.707. Drive at f<sub>c</sub>/10, f<sub>c</sub>, 10·f<sub>c</sub>; verify amplitude ratios.</li>
-      <li>3-op-amp instrumentation amp, gain ×10. Compute CMRR = 20 log(A<sub>diff</sub>/A<sub>cm</sub>).</li>
-    </ol>
-  </span></div>
-  <div class="deliverable"><strong>Deliverable:</strong> Instrumentation amp with CMRR ≥ 60 dB at 1 kHz.</div>
 </div>
 
 <div class="week">
@@ -241,7 +247,7 @@ Weekly deliverable: hand calculations + LTspice schematic + simulation plots + 1
     <li>Reference: <a href="https://www.ti.com/lit/ds/symlink/lm555.pdf">TI LM555 datasheet</a> — functional block diagram.</li>
   </ul>
 
-  <h3>Option C — Lotka-Volterra solver 🌶️ <em>stretch challenge</em></h3>
+  <h3>Option C — Lotka-Volterra solver <em>(stretch challenge)</em></h3>
   <p>Predator-prey ODEs: <code>dx/dt = αx − βxy</code>, <code>dy/dt = δxy − γy</code>. Same idea as Option A, but the <strong>xy</strong> terms are non-linear, so you need an <strong>analog multiplier</strong> (AD633). The reward: plot V<sub>x</sub> vs V<sub>y</sub> on an X-Y scope plot — the famous predator-prey limit cycle.</p>
   <ul>
     <li>2× integrators · 2× analog multipliers · summers + inverters · IC caps.</li>
@@ -265,7 +271,7 @@ Weekly deliverable: hand calculations + LTspice schematic + simulation plots + 1
 <ol class="project-list">
   <li><strong>Analog differential-equation solver.</strong> Integrators + summers + inverters wired to solve an ODE. Mass-spring-damper → damped sinusoid as the canonical demo.</li>
   <li><strong>555 timer from scratch.</strong> Comparators + SR latch + discharge switch — same internals as the NE555. Astable or monostable mode.</li>
-  <li><strong>Lotka-Volterra solver 🌶️ (stretch).</strong> Predator-prey ODEs with non-linear <code>xy</code> coupling — needs an analog multiplier (AD633). Reward: a closed limit cycle on an X-Y plot.</li>
+  <li><strong>Lotka-Volterra solver (stretch).</strong> Predator-prey ODEs with non-linear <code>xy</code> coupling — needs an analog multiplier (AD633). Reward: a closed limit cycle on an X-Y plot.</li>
 </ol>
 
 <div class="ltspice-section">
