@@ -1,7 +1,5 @@
 # SoS '26 — Analog Electronics
 
-### 👉 [**View the full plan**](https://vedika-doke.github.io/SoS-26-Analog-Electronics/SoS_Plan.html)
-
 Structured 8-week curriculum I'm using to mentor a Summer of Science (SoS) student in analog electronics. Heavy focus on **op-amps** — ideal linear circuits, real-world limits, and non-linear applications (Schmitt triggers, comparators, oscillators) — culminating in a project where the mentee picks between an **analog differential-equation solver**, a **555 timer built from scratch**, or a **Lotka-Volterra solver** (stretch).
 
 **Mentor:** Vedika Doke · **Institute:** IIT Bombay · **Duration:** 8 weeks
@@ -40,7 +38,6 @@ Structured 8-week curriculum I'm using to mentor a Summer of Science (SoS) stude
 
 ```
 .
-├── SoS_Plan.html        full 8-week plan (also live at the Pages link above)
 ├── POA.md               Plan-of-Action submission rules
 ├── weeks/
 │   ├── week0/           LTspice onboarding
