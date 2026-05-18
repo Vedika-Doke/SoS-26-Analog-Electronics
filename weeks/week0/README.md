@@ -2,13 +2,11 @@
 
 Onboarding before the program starts. Get LTspice installed and run one simulation.
 
-**Original handout:** [`Week0.pdf`](Week0.pdf) (GitHub's PDF viewer doesn't preserve clickable links — use the links below instead)
-
 ## Steps
 
 ### Step 1: Install LTspice
 Install LTspice XVII or latest from Analog Devices (Windows / Mac).
-**Installation guide (video):** https://drive.google.com/file/d/1D-YBuiAPc-czAoGhfAhSZUVWT8j0mYcg/view
+**Installation guide (video):** https://drive.google.com/file/d/1zGUMgb3VqzTxMfs1BEleY2YaYObVNJ2c/view
 
 ### Step 2: Learn the basics
 Walk through the official Analog Devices tutorial — interface, placing components, running simulations, viewing waveforms.
@@ -16,7 +14,7 @@ Walk through the official Analog Devices tutorial — interface, placing compone
 
 ### Step 3: Add external components / models
 Some parts (specific op-amps, transistors, diodes) aren't in the default library. Learn how to import them — essential for the circuits we'll build.
-**Adding components (video):** https://drive.google.com/file/d/1zGUMgb3VqzTxMfs1BEleY2YaYObVNJ2c/view
+**Adding components (video):** https://drive.google.com/file/d/1D-YBuiAPc-czAoGhfAhSZUVWT8j0mYcg/view
 
 ## Pre-loaded SPICE models
 
