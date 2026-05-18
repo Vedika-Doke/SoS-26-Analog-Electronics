@@ -41,9 +41,10 @@ Full plan: [`SoS_Plan.html`](SoS_Plan.html) (open in browser).
 ```
 
 ## Cadence
-- One 45-min meet per week.
+- **At least one short meet per week**. Please show up — as the mentor I have to submit an involvement / interactions log to the SoS coordinators, and consistent participation makes that smooth for both of us.
 - Content released week by week (current week's folder is the active one).
 - Midterm consolidation around the Week 4 / Week 5 boundary.
+- **Buffer week — week of June 12–19** — no new content. Use it to catch up, redo any week's deliverable, finish the midterm submission, or explore an optional topic (e.g. precision rectifiers, current mirrors, log/antilog amplifiers).
 
 ## Resource credits
 - **Sedra & Smith**, *Microelectronic Circuits* — [Drive folder](https://drive.google.com/drive/folders/1AWumX1rr4MDby0pJfxpg7-JE0xuE8mdn?usp=drive_link)

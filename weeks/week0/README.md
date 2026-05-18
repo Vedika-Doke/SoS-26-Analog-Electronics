@@ -53,4 +53,8 @@ The course is **op-amp heavy**. We touch diodes, BJTs and MOSFETs lightly in Wee
 
 **Midterm submission** likely happens around the Week 4 / Week 5 boundary — keep your weekly deliverables organized so you can compile a summary easily.
 
-Each week: ~6–8 hours of effort, one 45-min meet, one deliverable (hand calc + LTspice schematic + sim plots).
+Each week: ~6–8 hours of effort, one short meet, one deliverable (hand calc + LTspice schematic + sim plots).
+
+> **Meet attendance:** we'll have **at least one short meet per week** — could be 20 min, could be longer if you have lots to show. Please try to make every one: I submit an involvement / interactions log to the SoS coordinators, and consistent participation keeps that simple for both of us.
+
+> **Buffer week — week of June 12–19** — no new content. Catch-up, midterm submission, or an optional topic if you're ahead.
