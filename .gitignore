@@ -1,0 +1,25 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Large video files (kept on Google Drive instead)
+*.mp4
+*.mov
+LTSpice_Guide/
+
+# Copyrighted textbooks and reference course material (not for redistribution)
+EE204 (Analog Circuits)/
+
+# LTspice generated files
+*.raw
+*.log
+*.net
+*.op.raw
+*.fft
+*.b#*
+*.bak
+
+# Editor
+.vscode/
+.idea/
+*.swp
