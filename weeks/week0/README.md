@@ -1,6 +1,6 @@
 # Week 0 — LTspice Setup
 
-> 📋 **About this repo:** it's a guideline, not a rulebook. You'll submit your own **Plan of Action (POA)** to the SoS coordinators — you can follow this trajectory, mix and match, or do something entirely different. I'll back whichever direction you pick; this just exists so we have a shared baseline.
+> 📋 **About this repo:** it's a guideline, not a rulebook. You'll submit your own **Plan of Action (POA)** to the SoS coordinators — see [`POA.md`](../../POA.md) for the rules (midterm mid-June, endterm mid-July, references mandatory, mentor-reviewed first). You can follow this trajectory, mix and match, or do something entirely different.
 
 Onboarding before the program starts. Get LTspice installed and run one simulation.
 

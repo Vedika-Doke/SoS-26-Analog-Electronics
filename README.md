@@ -4,7 +4,7 @@ Structured 8-week curriculum I'm using to mentor a Summer of Science (SoS) stude
 
 **Mentor:** Vedika Doke · **Institute:** IIT Bombay · **Duration:** 8 weeks
 
-> 📋 **This repo is a guideline, not a rulebook.** You'll have to submit your own **Plan of Action (POA)** to the SoS coordinators. You can follow this trajectory, mix and match, or chart your own — whatever helps *you* learn. I'll back whichever direction you pick; this just exists so we have a shared baseline to deviate from.
+> 📋 **This repo is a guideline, not a rulebook.** You'll have to submit your own **Plan of Action (POA)** to the SoS coordinators — see [`POA.md`](POA.md) for the submission rules (midterm mid-June, endterm mid-July, references mandatory, mentor-reviewed before submission). You can follow this trajectory, mix and match, or chart your own — whatever helps *you* learn. I'll back whichever direction you pick; this just exists so we have a shared baseline to deviate from.
 
 ---
 
