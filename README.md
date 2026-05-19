@@ -41,11 +41,11 @@ Structured 8-week curriculum I'm using to mentor a Summer of Science (SoS) stude
 ```
 .
 ├── POA.md               Plan-of-Action submission rules
-├── weeks/
-│   ├── week0/           LTspice onboarding
-│   ├── week1/ … week8/  notes, labs, deliverables per week
-├── ltspice/             shared .asc files, SPICE models
-└── resources/           external links, references, EE204 homeworks
+├── Weeks/
+│   ├── Week0/           LTspice onboarding
+│   ├── Week1/ … Week8/  notes, labs, deliverables per week
+├── Ltspice/             shared .asc files, SPICE models
+└── Resources/           external links, references, EE204 homeworks
 ```
 
 ## Resource credits
@@ -53,4 +53,4 @@ Structured 8-week curriculum I'm using to mentor a Summer of Science (SoS) stude
 - **Sergio Franco**, *Design with Op-Amps and Analog ICs* — [Drive folder](https://drive.google.com/drive/folders/17T1Mnk_SVdqIi2b4Fn-qmpbAn6tkMbvd?usp=drive_link)
 - **Prof. M. B. Patil, EE204 slides (IIT Bombay)** — [course page](https://www.ee.iitb.ac.in/~sequel/course_material.html) · [Drive mirror](https://drive.google.com/drive/folders/1jPG5-WahBaDfoCOUDKTlCq3mqKhl5vyN?usp=drive_link)
 - **Lotka-Volterra project brief** — courtesy of EESA's *opAmped*, Learner's Space, IIT Bombay (Summer 2025). [Drive folder](https://drive.google.com/drive/folders/1Eb89DbthMYpdsaxMRP_hKD4yDCrUxa3Q?usp=drive_link)
-- LTspice install + tutorial videos — Drive links inside [`weeks/week0/`](weeks/week0/)
+- LTspice install + tutorial videos — Drive links inside [`Weeks/Week0/`](Weeks/Week0/)

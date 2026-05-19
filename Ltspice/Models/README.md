@@ -16,7 +16,7 @@ Drop-in `.txt`/`.lib` models for parts not in the default LTspice library.
 2. Right-click → set `Value` to the model name (e.g. `BC547B`).
 3. Add a SPICE directive (`.op` icon → SPICE directive):
    ```
-   .include /path/to/ltspice/models/bc547.txt
+   .include /path/to/Ltspice/Models/bc547.txt
    ```
 4. Run sim. If model not found, check the model name inside the `.txt` matches what you typed.
 

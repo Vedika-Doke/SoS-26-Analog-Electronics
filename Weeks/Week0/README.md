@@ -20,7 +20,7 @@ Some parts (specific op-amps, transistors, diodes) aren't in the default library
 
 ## Pre-loaded SPICE models
 
-Common parts (LM324, uA741, BC547, 1N914, Zener, LEDs, MOSFETs) are already packaged in [`ltspice/models/`](../../ltspice/models/) with usage instructions.
+Common parts (LM324, uA741, BC547, 1N914, Zener, LEDs, MOSFETs) are already packaged in [`Ltspice/Models/`](../../Ltspice/Models/) with usage instructions.
 
 ## Checkpoints
 

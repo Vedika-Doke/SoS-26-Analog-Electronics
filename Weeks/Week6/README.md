@@ -47,4 +47,4 @@ Now that you've seen comparators and summing amplifiers, you can build (or at le
 Build a 4-bit weighted-resistor DAC: summing op-amp with R, 2R, 4R, 8R inputs driven by four DC sources (1/0 representing logic high/low). Sweep through all 16 codes (`.step param`) and verify the staircase output.
 
 ### HW for this section
-- `resources/hw/mbp_2018_hw12.pdf` — covers DAC resolution, weighted-resistor DAC with tolerance analysis, flash vs counter ADC, **and** 555 timer internals (monostable + astable). Recommend Q1–Q11 here; Q12–Q14 in Week 7.
+- `Resources/Hw/mbp_2018_hw12.pdf` — covers DAC resolution, weighted-resistor DAC with tolerance analysis, flash vs counter ADC, **and** 555 timer internals (monostable + astable). Recommend Q1–Q11 here; Q12–Q14 in Week 7.

@@ -36,7 +36,7 @@ Recreate the internals of the legendary NE555 using discrete op-amps: two compar
 - TI LM555 datasheet — functional block diagram page is the canonical schematic. https://www.ti.com/lit/ds/symlink/lm555.pdf
 - Franco — Schmitt trigger + relaxation oscillator sections. [Drive folder](https://drive.google.com/drive/folders/17T1Mnk_SVdqIi2b4Fn-qmpbAn6tkMbvd?usp=drive_link)
 - EE204 slides `mc_opamp_6.pdf` — Prof. M. B. Patil. [Drive mirror](https://drive.google.com/drive/folders/1jPG5-WahBaDfoCOUDKTlCq3mqKhl5vyN?usp=drive_link) · [Source](https://www.ee.iitb.ac.in/~sequel/course_material.html)
-- EE204 HW12 (`resources/hw/mbp_2018_hw12.pdf`) Q12–Q14 — drawn-out 555 monostable + astable schematics with comparator/SR-latch internals. Highly recommended.
+- EE204 HW12 (`Resources/Hw/mbp_2018_hw12.pdf`) Q12–Q14 — drawn-out 555 monostable + astable schematics with comparator/SR-latch internals. Highly recommended.
 
 ---
 
@@ -49,7 +49,7 @@ dx/dt = αx − βxy
 dy/dt = δxy − γy
 ```
 
-Same idea as Option A — voltages represent populations, integrators do the integration — but the **xy** terms are **non-linear**, so you need an **analog multiplier** (AD633 is the classic part; the model is in [`ltspice/models/`](../../ltspice/models/) or downloadable from Analog Devices).
+Same idea as Option A — voltages represent populations, integrators do the integration — but the **xy** terms are **non-linear**, so you need an **analog multiplier** (AD633 is the classic part; the model is in [`Ltspice/Models/`](../../Ltspice/Models/) or downloadable from Analog Devices).
 
 If you get it right, the output shows the populations oscillating out of phase — the famous predator-prey limit cycle. Plot V_x vs V_y on an X-Y scope plot to see the closed orbit.
 
