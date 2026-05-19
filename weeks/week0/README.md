@@ -53,7 +53,7 @@ The course is **op-amp heavy**. We touch diodes, BJTs and MOSFETs lightly in Wee
 2. **555 timer from scratch** — recreate the legendary NE555 internals using discrete op-amps, comparators and a latch. Configure as astable oscillator or monostable one-shot.
 3. **Lotka-Volterra solver** *(stretch challenge)* — predator-prey ODEs. Same idea as Option 1 but the `xy` terms are non-linear, so you'll learn to use an **analog multiplier** (AD633). The reward: an X-Y plot showing the famous predator-prey limit cycle.
 
-**Midterm submission** likely happens around the Week 4 / Week 5 boundary — keep your weekly deliverables organized so you can compile a summary easily.
+**Key dates:** program starts **Sun 24 May 2026** · **midterm 21 Jun 2026** (end of Week 4) · **endterm 19 Jul 2026** (end of Week 8). Keep weekly deliverables organized so the midterm consolidation isn't a last-day scramble.
 
 Each week: ~6–8 hours of effort, one short meet, one deliverable (hand calc + LTspice schematic + sim plots).
 

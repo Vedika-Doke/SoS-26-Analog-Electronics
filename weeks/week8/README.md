@@ -1,5 +1,9 @@
 # Week 8 — Project finish + final report + presentation
 
+**Endterm submission due: 19 July 2026** (+8 weeks from program start).
+
+> **Endterm format heads-up:** last year's endterm required both a **written report** *and* a **short video** walking through part of your SoS work. Not yet confirmed for SoS '26 — but plan as if it'll be the same, so you're not scrambling at the end.
+
 Polish, document, present.
 
 ## Polish

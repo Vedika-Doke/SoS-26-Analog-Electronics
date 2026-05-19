@@ -31,7 +31,9 @@ Structured 8-week curriculum I'm using to mentor a Summer of Science (SoS) stude
 ## Cadence
 - **At least one short meet per week.** Please show up — as the mentor I have to submit an involvement / interactions log to the SoS coordinators, and consistent participation makes that smooth for both of us.
 - Content released week by week (current week's folder is the active one).
-- Midterm consolidation around the Week 4 / Week 5 boundary.
+- **Start: Sun 24 May 2026.**
+- **Midterm submission: 21 June 2026** (+4 weeks).
+- **Endterm submission: 19 July 2026** (+8 weeks).
 - **Buffer week — week of June 12–19** — no new content. Catch up, redo any deliverable, finish the midterm submission, or explore an optional topic.
 
 ## Repo layout

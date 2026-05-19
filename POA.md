@@ -4,7 +4,11 @@ The POA is a **short document with your week-wise plan** for SoS, including plan
 
 ## Required elements
 
-1. **Checkpoints:** treat **midterm as mid-June** and **endterm as mid-July**, and include both in the POA.
+1. **Checkpoints:** program starts **Sunday 24 May 2026**.
+   - **Midterm submission: 21 June 2026** (+4 weeks from start, end of Week 4)
+   - **Endterm submission: 19 July 2026** (+8 weeks from start, end of Week 8)
+   - Both must appear in the POA.
+   - **Heads-up on endterm format:** last year's endterm also required a **written report** *and* a **short video** explaining part of your SoS work. Not confirmed whether SoS '26 will follow the same pattern — plan as if it might.
 2. **References are mandatory:** list the books / lecture series / online resources you plan to use during SoS.
 3. **Be realistic *and* comprehensive.** Certification depends on how much of your POA you actually accomplish, so don't promise the moon — but it also needs to be substantial enough not to get rejected outright.
 4. **Get it reviewed by your mentor (me) before submitting.** Send me a draft and I'll give feedback.

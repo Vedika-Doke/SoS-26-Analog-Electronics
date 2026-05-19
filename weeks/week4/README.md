@@ -23,9 +23,9 @@ GBW table: at gains ×1, ×10, ×100, list the measured −3 dB frequency and ve
 
 ---
 
-## 📌 Midterm submission (around end of Week 4 / start of Week 5)
+## 📌 Midterm submission — due 21 June 2026
 
-There will likely be an SoS midterm submission window around here. Plan to consolidate Weeks 1–4 into a short report:
+End of Week 4 (+4 weeks from start). Consolidate Weeks 1–4 into a short report:
 
 - 1 page summary per week (what was learned + the key plot)
 - All LTspice schematics + simulation results
