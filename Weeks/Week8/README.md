@@ -11,7 +11,7 @@ Polish, document, present.
 - Stress-test: sweep R/C, change op-amp GBW, change initial conditions — does the circuit still behave?
 - Identify and explain at least one failure mode.
 
-## Final report (4–6 pages)
+## Final report (20 pages[including the theoritical bits learned throughout the SoS duration])
 - Specs you chose and why
 - Block diagram + LTspice schematic
 - Hand calculations for the key parameters
