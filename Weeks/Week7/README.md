@@ -19,6 +19,7 @@ Build a circuit that physically solves an ODE. Voltage at each node = a variable
 **Resources:**
 - Franco, *Design with Op-Amps and Analog ICs* — analog computation chapter. [Drive folder](https://drive.google.com/drive/folders/17T1Mnk_SVdqIi2b4Fn-qmpbAn6tkMbvd?usp=drive_link)
 - Classic Philbrick Researches op-amp application notes (public domain — Google "Philbrick analog computer").
+- Analog Lab (EE230) Course Project: [Drive folder](https://drive.google.com/drive/folders/1aSZTyTb9XHa9UuP4lbLYzMAh9Tl3c__E?usp=drive_link)
 
 ---
 
