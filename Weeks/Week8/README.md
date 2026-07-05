@@ -24,4 +24,4 @@ Polish, document, present.
 - Reflect: what would you build *next* if you had another month?
 
 ## Deliverable
-Report PDF + final LTspice files in `Weeks/Week8/labs/`, committed to the repo.
+Report PDF + final LTspice files in `Weeks/Week8/labs/` , demonstration.
